@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Algoritmos que Salvan Vidas: Optimización Inteligente de Rutas de Emergencia">
+    <title>Optimización de Rutas de Emergencia - Alberto López</title>
+    <link rel="icon" type="image/png" href="images/icons/icinopersonal.png">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .project-hero {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: calc(var(--height-header) + var(--spacing-4xl)) var(--spacing-3xl) var(--spacing-6xl);
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(32, 87, 129, 0.1) 0%, rgba(10, 10, 10, 1) 100%);
+        }
+
+        .project-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 30% 40%, rgba(152, 210, 192, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(32, 87, 129, 0.06) 0%, transparent 50%);
+            opacity: 0.5;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .project-hero-content {
+            max-width: 1000px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: var(--spacing-xl);
+            line-height: 1.2;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--color-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .project-hero .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-3xl);
+            line-height: 1.6;
+        }
+
+        .project-hero .cta-buttons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-lg);
+            justify-content: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .project-hero .cta-buttons {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .project-hero .cta-buttons a:last-child {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project-hero .cta-buttons {
+                grid-template-columns: 1fr;
+            }
+            .project-hero .cta-buttons a:last-child {
+                grid-column: 1;
+            }
+        }
+
+        .project-section {
+            padding: var(--spacing-6xl) var(--spacing-3xl);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-2xl);
+            color: var(--color-accent);
+        }
+
+        .project-section h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-top: var(--spacing-4xl);
+            margin-bottom: var(--spacing-xl);
+            color: var(--text-primary);
+        }
+
+        .project-section h4 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-top: var(--spacing-3xl);
+            margin-bottom: var(--spacing-lg);
+            color: var(--color-accent);
+        }
+
+        .project-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .project-section strong {
+            color: var(--text-primary);
+        }
+
+        .insights-grid {
+            display: grid;
+            gap: var(--spacing-2xl);
+            margin: var(--spacing-3xl) 0;
+        }
+
+        .insight-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: var(--spacing-3xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .insight-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--color-accent);
+        }
+
+        .insight-card h4 {
+            color: var(--color-accent);
+            margin-bottom: var(--spacing-md);
+            font-size: 1.3rem;
+        }
+
+        .quote {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--color-accent);
+            padding: var(--spacing-2xl);
+            margin: var(--spacing-3xl) 0;
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: var(--spacing-3xl);
+            transition: all var(--transition-base);
+        }
+
+        .back-button:hover {
+            gap: var(--spacing-md);
+            color: var(--text-primary);
+        }
+
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--color-accent);
+            border-radius: 12px;
+            padding: var(--spacing-2xl);
+            margin: var(--spacing-xl) 0;
+        }
+
+        .coming-soon {
+            background: linear-gradient(135deg, rgba(152, 210, 192, 0.1) 0%, rgba(32, 87, 129, 0.1) 100%);
+            border: 2px solid var(--color-accent);
+            border-radius: 12px;
+            padding: var(--spacing-4xl);
+            margin: var(--spacing-6xl) auto;
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .coming-soon h2 {
+            font-size: 2.5rem;
+            color: var(--color-accent);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .coming-soon p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+        }
+
+        .project-hero .cta-buttons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-md) var(--spacing-lg);
+            text-decoration: none;
+            transition: all var(--transition-base);
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .project-hero .cta-buttons a i {
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <nav class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" class="logo-link">AL</a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#about" class="nav-link" data-i18n="nav.about">Sobre Mí</a></li>
+                <li><a href="index.html#experience" class="nav-link" data-i18n="nav.experience">Experiencia</a></li>
+                <li><a href="index.html#projects" class="nav-link" data-i18n="nav.projects">Proyectos</a></li>
+                <li><a href="index.html#education" class="nav-link" data-i18n="nav.education">Educación</a></li>
+                <li><a href="index.html#contact" class="nav-link" data-i18n="nav.contact">Contacto</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="lang-toggle" id="langToggle" aria-label="Change language">
+                    <span id="langDisplay">ES</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="project-hero-content">
+            <h1 data-i18n="project.ambulancias.title">Algoritmos que Salvan Vidas</h1>
+            <p class="subtitle" data-i18n="project.ambulancias.subtitle">Optimización Inteligente de Rutas de Emergencia</p>
+            <div class="cta-buttons">
+                <a href="index.html#projects" class="btn-primary" style="background: var(--bg-tertiary);">
+                    <i class="ri-arrow-left-line"></i> <span data-i18n="project.back">Volver a Proyectos</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introducción Teórica -->
+    <section class="project-section">
+        <a href="index.html#projects" class="back-button">
+            <i class="ri-arrow-left-line"></i> <span data-i18n="project.back">Volver a Proyectos</span>
+        </a>
+        
+        <h2 data-i18n="project.ambulancias.intro.title">1. Introducción Teórica: La Geometría de la Emergencia</h2>
+        <div class="quote" data-i18n="project.ambulancias.intro.quote">
+            "En la asistencia sanitaria urgente, la distancia más corta entre dos puntos no siempre es la más rápida. La infraestructura urbana actual presenta obstáculos invisibles para los vehículos de emergencia: cruces con baja visibilidad, aislamiento acústico en vehículos modernos y la inevitable congestión en intersecciones principales."
+        </div>
+        <p data-i18n="project.ambulancias.intro.text">
+            La <strong>Teoría de Grafos</strong> aplicada a la movilidad urbana nos permite reinterpretar el mapa de la ciudad no como un plano estático, sino como una red dinámica de nodos y aristas. El reto no es solo aumentar la velocidad del vehículo, sino reducir la fricción del entorno, calculando matemáticamente el 'coste' temporal de cada maniobra, cada semáforo y cada giro.
+        </p>
+    </section>
+
+    <!-- Sobre el Proyecto -->
+    <section class="project-section">
+        <h2 data-i18n="project.ambulancias.about.title">2. Sobre el Proyecto</h2>
+        <p data-i18n="project.ambulancias.about.text1">
+            Nuestro sistema propone un cambio de paradigma en la navegación de ambulancias. Utilizando <strong>Inteligencia Artificial</strong> y modelado basado en grafos, estamos desarrollando un algoritmo de enrutamiento que va más allá del GPS tradicional.
+        </p>
+        
+        <p data-i18n="project.ambulancias.about.text2">
+            A diferencia de los navegadores convencionales, nuestro modelo asigna un 'peso' o puntuación a cada variable de la vía:
+        </p>
+
+        <div class="insights-grid">
+            <div class="insight-card">
+                <h4 data-i18n="project.ambulancias.topology.title">Topología de la Calle</h4>
+                <p data-i18n="project.ambulancias.topology.text">Ponderación basada en límites de velocidad y número de carriles disponibles.</p>
+            </div>
+            <div class="insight-card">
+                <h4 data-i18n="project.ambulancias.complexity.title">Complejidad del Nodo</h4>
+                <p data-i18n="project.ambulancias.complexity.text">Análisis de los cruces según el número de vías convergentes y la probabilidad de bloqueo.</p>
+            </div>
+            <div class="insight-card">
+                <h4 data-i18n="project.ambulancias.maneuver.title">Coste de Maniobra</h4>
+                <p data-i18n="project.ambulancias.maneuver.text">Penalización inteligente de giros complejos (como giros a la izquierda frente a la fluidez de la derecha).</p>
+            </div>
+            <div class="insight-card">
+                <h4 data-i18n="project.ambulancias.congestion.title">Congestión en Tiempo Real</h4>
+                <p data-i18n="project.ambulancias.congestion.text">Adaptación dinámica del grafo según la densidad del tráfico.</p>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <p data-i18n="project.ambulancias.about.goal">
+                El objetivo es generar rutas que, aunque puedan recorrer más metros, eviten los 'puntos negros' de retención (cruces conflictivos), garantizando un trayecto fluido y continuo donde <strong>cada segundo ganado se traduce en oportunidades de supervivencia</strong>.
+            </p>
+        </div>
+    </section>
+
+    <!-- Estado Actual -->
+    <section class="project-section">
+        <h2 data-i18n="project.ambulancias.status.title">3. Estado Actual</h2>
+        <p data-i18n="project.ambulancias.status.text">
+            El proyecto se encuentra en fase de conceptualización y desarrollo del algoritmo base, tomando como laboratorio de pruebas la complejidad vial de ciudades como <strong>Badajoz</strong>. Estamos entrenando al modelo para 'entender' la ciudad como un organismo vivo.
+        </p>
+    </section>
+
+    <!-- Próximamente -->
+    <section class="project-section">
+        <div class="coming-soon">
+            <h2 data-i18n="project.ambulancias.coming">PRÓXIMAMENTE</h2>
+            <p data-i18n="project.ambulancias.coming.text">Este proyecto está en desarrollo activo. Pronto compartiremos más detalles sobre el algoritmo, resultados y visualizaciones.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 data-i18n="footer.quick">Enlaces rápidos</h3>
+                <a href="index.html#about" data-i18n="nav.about">Sobre Mí</a>
+                <a href="index.html#projects" data-i18n="nav.projects">Proyectos</a>
+                <a href="index.html#education" data-i18n="nav.education">Educación</a>
+                <a href="index.html#contact" data-i18n="nav.contact">Contacto</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> Alberto López. <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>
+        </div>
+    </footer>
+
+    <script src="i18n.js"></script>
+    <script>
+        // Initialize i18n and language toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            // Esperar a que i18n esté disponible
+            if (window.i18n) {
+                // Obtener idioma guardado o detectado
+                const lang = window.i18n.getCurrentLanguage();
+                // Aplicar idioma (esto actualiza todos los textos y el display)
+                window.i18n.setLanguage(lang);
+            }
+            
+            // Initialize language toggle button
+            const langToggle = document.getElementById('langToggle');
+            if (langToggle) {
+                langToggle.addEventListener('click', () => {
+                    const currentLang = window.i18n.getCurrentLanguage();
+                    const newLang = currentLang === 'es' ? 'en' : 'es';
+                    window.i18n.setLanguage(newLang);
+                });
+            }
+        });
+        
+        // Current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
+

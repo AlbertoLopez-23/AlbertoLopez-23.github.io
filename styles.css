@@ -264,12 +264,21 @@ footer .footer-section h3 {
   letter-spacing: -0.02em;
 }
 
-footer .footer-section p,
-footer .footer-section a {
+footer .footer-section p {
   margin-bottom: var(--spacing-sm);
+  color: var(--text-secondary);
+}
+
+footer .footer-section a {
+  display: inline-block;
+  margin-right: var(--spacing-2xl);
   color: var(--text-secondary);
   text-decoration: none;
   transition: color var(--transition-base);
+}
+
+footer .footer-section a:last-child {
+  margin-right: 0;
 }
 
 footer .footer-section a:hover {
@@ -1017,8 +1026,7 @@ a:hover {
 
 .bento-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 220px);
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-xl);
   max-width: 1400px;
   margin: 0 auto;
@@ -1026,7 +1034,6 @@ a:hover {
 
 @media (min-width: 1200px) {
   .bento-grid {
-    grid-template-rows: repeat(3, 280px);
     gap: var(--spacing-2xl);
   }
   
@@ -1182,19 +1189,9 @@ a:hover {
   transform: none;
 }
 
-.bento-large {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-
-.bento-wide {
-  grid-column: span 2;
-}
-
-.bento-tall {
-  grid-row: span 2;
-}
-
+.bento-large,
+.bento-wide,
+.bento-tall,
 .bento-small {
   grid-column: span 1;
   grid-row: span 1;
@@ -1777,16 +1774,6 @@ a:hover {
 @media (max-width: 1024px) {
   .bento-grid {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-  }
-  
-  .bento-large {
-    grid-column: span 2;
-    grid-row: span 1;
-  }
-  
-  .bento-tall {
-    grid-row: span 1;
   }
   
   .section-previews {

@@ -274,24 +274,28 @@
                 <a href="index.html" class="logo-link">AL</a>
             </div>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html#about" class="nav-link">Sobre Mí</a></li>
-                <li><a href="index.html#experience" class="nav-link">Experiencia</a></li>
-                <li><a href="index.html#projects" class="nav-link">Proyectos</a></li>
-                <li><a href="index.html#education" class="nav-link">Educación</a></li>
-                <li><a href="index.html#contact" class="nav-link">Contacto</a></li>
+                <li><a href="index.html#about" class="nav-link" data-i18n="nav.about">Sobre Mí</a></li>
+                <li><a href="index.html#experience" class="nav-link" data-i18n="nav.experience">Experiencia</a></li>
+                <li><a href="index.html#projects" class="nav-link" data-i18n="nav.projects">Proyectos</a></li>
+                <li><a href="index.html#education" class="nav-link" data-i18n="nav.education">Educación</a></li>
+                <li><a href="index.html#contact" class="nav-link" data-i18n="nav.contact">Contacto</a></li>
             </ul>
-            <div class="nav-actions"></div>
+            <div class="nav-actions">
+                <button class="lang-toggle" id="langToggle" aria-label="Change language">
+                    <span id="langDisplay">ES</span>
+                </button>
+            </div>
         </nav>
     </header>
 
     <!-- Project Hero -->
     <section class="project-hero">
         <div class="project-hero-content">
-            <h1>Clustering en Fútbol Profesional</h1>
-            <p class="subtitle">Análisis de Rendimiento Físico de los Jugadores mediante Machine Learning no supervisado</p>
+            <h1 data-i18n="project.clustering.title">Clustering en Fútbol Profesional</h1>
+            <p class="subtitle" data-i18n="project.clustering.subtitle">Análisis de Rendimiento Físico de los Jugadores mediante Machine Learning no supervisado</p>
             <div class="cta-buttons">
                 <a href="index.html#projects" class="btn-primary" style="background: var(--bg-tertiary);">
-                    <i class="ri-arrow-left-line"></i> Volver a Proyectos
+                    <i class="ri-arrow-left-line"></i> <span data-i18n="project.back">Volver a Proyectos</span>
                 </a>
             </div>
         </div>
@@ -300,26 +304,26 @@
     <!-- El Desafío -->
     <section class="project-section">
         <a href="index.html#projects" class="back-button">
-            <i class="ri-arrow-left-line"></i> Volver a Proyectos
+            <i class="ri-arrow-left-line"></i> <span data-i18n="project.back">Volver a Proyectos</span>
         </a>
         
-        <h2>1. El Desafío</h2>
-        <div class="quote">
+        <h2 data-i18n="project.clustering.challenge.title">1. El Desafío</h2>
+        <div class="quote" data-i18n="project.clustering.challenge.quote">
             "En el fútbol moderno, los datos lo son todo. Pero, ¿realmente define la posición teórica de un jugador su impacto real en el campo?"
         </div>
-        <p>
+        <p data-i18n="project.clustering.challenge.text">
             Como apasionado del deporte y el análisis de datos, decidí ir más allá de las etiquetas tradicionales (defensa, medio, delantero). Mi objetivo fue utilizar <strong>Machine Learning no supervisado</strong> para descubrir si existen 'tipos de jugadores' invisibles basados puramente en su rendimiento físico, analizando más de <strong>380,000 registros</strong> de la temporada 2022-2023 de La Liga (1ª y 2ª División).
         </p>
     </section>
 
     <!-- Stack Tecnológico -->
     <section class="project-section">
-        <h2>2. Stack Tecnológico</h2>
-        <p>Para este proyecto utilicé un enfoque científico basado en Python, gestionando grandes volúmenes de datos deportivos:</p>
+        <h2 data-i18n="project.clustering.tech.title">2. Stack Tecnológico</h2>
+        <p data-i18n="project.clustering.tech.text">Para este proyecto utilicé un enfoque científico basado en Python, gestionando grandes volúmenes de datos deportivos:</p>
         
         <div class="tech-stack">
             <div class="tech-item">
-                <h4>Lenguaje</h4>
+                <h4 data-i18n="project.clustering.tech.language">Lenguaje</h4>
                 <ul>
                     <li>Python</li>
                     <li>Scikit-learn</li>
@@ -327,18 +331,18 @@
                 </ul>
             </div>
             <div class="tech-item">
-                <h4>Data Engineering</h4>
+                <h4 data-i18n="project.clustering.tech.data">Data Engineering</h4>
                 <ul>
-                    <li>Limpieza y estandarización de datasets masivos</li>
-                    <li>Registros por intervalos de 5 minutos</li>
-                    <li>Más de 380,000 registros procesados</li>
+                    <li data-i18n="project.clustering.tech.data.list1">Limpieza y estandarización de datasets masivos</li>
+                    <li data-i18n="project.clustering.tech.data.list2">Registros por intervalos de 5 minutos</li>
+                    <li data-i18n="project.clustering.tech.data.list3">Más de 380,000 registros procesados</li>
                 </ul>
             </div>
             <div class="tech-item">
-                <h4>Modelos de IA</h4>
+                <h4 data-i18n="project.clustering.tech.models">Modelos de IA</h4>
                 <ul>
-                    <li>K-Means Clustering</li>
-                    <li>Redes Neuronales (SOM)</li>
+                    <li data-i18n="project.clustering.tech.models.list1">K-Means Clustering</li>
+                    <li data-i18n="project.clustering.tech.models.list2">Redes Neuronales (SOM)</li>
                 </ul>
             </div>
         </div>
@@ -346,57 +350,57 @@
 
     <!-- Metodología -->
     <section class="project-section">
-        <h2>3. ¿Qué hice? (La Metodología Simplificada)</h2>
-        <p>
+        <h2 data-i18n="project.clustering.methodology.title">3. ¿Qué hice? (La Metodología Simplificada)</h2>
+        <p data-i18n="project.clustering.methodology.text">
             El proyecto se centró en procesar métricas físicas puras, ignorando goles o asistencias. Analicé distancias recorridas a distintos rangos de velocidad y si estas han sido recorridas con y sin balón. Para encontrar patrones, utilicé técnicas de <strong>Clustering</strong>.
         </p>
 
-        <h3>¿Qué es el Clustering?</h3>
-        <p>
+        <h3 data-i18n="project.clustering.methodology.what.title">¿Qué es el Clustering?</h3>
+        <p data-i18n="project.clustering.methodology.what.text1">
             Tal como definí en el proyecto, el Clustering es una técnica de aprendizaje no supervisado. Su objetivo no es predecir un resultado conocido, sino encontrar patrones "invisibles" dentro de los datos agrupándolos por similitud.
         </p>
-        <p>
+        <p data-i18n="project.clustering.methodology.what.text2">
             En lugar de imponer una conclusión previa (como decirle al modelo "esto es un defensa"), el algoritmo analiza la estructura intrínseca de los datos para averiguar quién se parece a quién. De esta forma, simplemente analizando los esfuerzos físicos realizados durante el encuentro (distancias, velocidades, sprints), el modelo es capaz de agrupar a los futbolistas que comparten el mismo ADN físico, independientemente de su dorsal.
         </p>
 
-        <h3>Los algoritmos que comparé:</h3>
+        <h3 data-i18n="project.clustering.methodology.algorithms">Los algoritmos que comparé:</h3>
         
         <div class="insights-grid">
             <div class="insight-card">
-                <h4>K-Means (El clásico)</h4>
-                <p>Funciona definiendo "centros" de gravedad y agrupando a los jugadores alrededor del centro más cercano. Es rápido y eficiente, ideal para diferenciar grupos muy marcados.</p>
+                <h4 data-i18n="project.clustering.methodology.kmeans.title">K-Means (El clásico)</h4>
+                <p data-i18n="project.clustering.methodology.kmeans.text">Funciona definiendo "centros" de gravedad y agrupando a los jugadores alrededor del centro más cercano. Es rápido y eficiente, ideal para diferenciar grupos muy marcados.</p>
             </div>
             <div class="insight-card">
-                <h4>Mapas Autoorganizados o SOM (La Red Neuronal)</h4>
-                <p>Es una técnica más avanzada basada en redes neuronales. A diferencia de K-Means, el SOM crea un "mapa" visual donde coloca a los jugadores similares cerca unos de otros, preservando la relación topológica entre ellos. Es excelente para detectar matices sutiles en datos complejos.</p>
+                <h4 data-i18n="project.clustering.methodology.som.title">Mapas Autoorganizados o SOM (La Red Neuronal)</h4>
+                <p data-i18n="project.clustering.methodology.som.text">Es una técnica más avanzada basada en redes neuronales. A diferencia de K-Means, el SOM crea un "mapa" visual donde coloca a los jugadores similares cerca unos de otros, preservando la relación topológica entre ellos. Es excelente para detectar matices sutiles en datos complejos.</p>
             </div>
         </div>
     </section>
 
     <!-- Insights y Hallazgos -->
     <section class="project-section">
-        <h2>4. Insights y Hallazgos</h2>
-        <p>Más allá de los algoritmos, el análisis reveló patrones tácticos sobre cómo ha evolucionado el fútbol físico:</p>
+        <h2 data-i18n="project.clustering.insights.title">4. Insights y Hallazgos</h2>
+        <p data-i18n="project.clustering.insights.intro">Más allá de los algoritmos, el análisis reveló patrones tácticos sobre cómo ha evolucionado el fútbol físico:</p>
 
         <div class="insights-grid">
             <div class="insight-card">
-                <h4>La desaparición del "Lateral" clásico</h4>
-                <p>El modelo agrupó frecuentemente a <strong>laterales y delanteros</strong> en el mismo clúster. Esto valida con datos la tendencia del fútbol moderno: los carrileros actuales tienen una exigencia de explosividad, sprint y recorrido prácticamente idéntica a la de un extremo o delantero. Físicamente, son intercambiables.</p>
+                <h4 data-i18n="project.clustering.insights.lateral.title">La desaparición del "Lateral" clásico</h4>
+                <p data-i18n="project.clustering.insights.lateral.text">El modelo agrupó frecuentemente a <strong>laterales y delanteros</strong> en el mismo clúster. Esto valida con datos la tendencia del fútbol moderno: los carrileros actuales tienen una exigencia de explosividad, sprint y recorrido prácticamente idéntica a la de un extremo o delantero. Físicamente, son intercambiables.</p>
             </div>
 
             <div class="insight-card">
-                <h4>Perfiles especializados vs. Versátiles</h4>
-                <p>Mientras que los defensas centrales (derechos e izquierdos) mostraron una gran cohesión (siempre caían en el mismo grupo), indicando un rol físico muy especializado y estático, los mediocentros mostraron mayor dispersión, sugiriendo que la categoría "centrocampista" es demasiado vaga para describir el despliegue físico real.</p>
+                <h4 data-i18n="project.clustering.insights.profiles.title">Perfiles especializados vs. Versátiles</h4>
+                <p data-i18n="project.clustering.insights.profiles.text">Mientras que los defensas centrales (derechos e izquierdos) mostraron una gran cohesión (siempre caían en el mismo grupo), indicando un rol físico muy especializado y estático, los mediocentros mostraron mayor dispersión, sugiriendo que la categoría "centrocampista" es demasiado vaga para describir el despliegue físico real.</p>
             </div>
 
             <div class="insight-card">
-                <h4>Scouting basado en el rendimiento, no en la posición</h4>
-                <p>Al ignorar la etiqueta de la posición, este modelo permite identificar <strong>jugadores infravalorados</strong>. Si un equipo busca un extremo caro, podría usar este modelo para encontrar un lateral más económico que ofrece exactamente el mismo despliegue físico de alta intensidad.</p>
+                <h4 data-i18n="project.clustering.insights.scouting.title">Scouting basado en el rendimiento, no en la posición</h4>
+                <p data-i18n="project.clustering.insights.scouting.text">Al ignorar la etiqueta de la posición, este modelo permite identificar <strong>jugadores infravalorados</strong>. Si un equipo busca un extremo caro, podría usar este modelo para encontrar un lateral más económico que ofrece exactamente el mismo despliegue físico de alta intensidad.</p>
             </div>
 
             <div class="insight-card">
-                <h4>Potencial en prevención de lesiones</h4>
-                <p>Detectar cambios de clúster de un jugador a lo largo de la temporada podría servir como sistema de alerta temprana. Si un jugador explosivo empieza a caer en clústeres de "bajo rendimiento" sin motivo aparente, podría indicar fatiga acumulada o riesgo de lesión.</p>
+                <h4 data-i18n="project.clustering.insights.injuries.title">Potencial en prevención de lesiones</h4>
+                <p data-i18n="project.clustering.insights.injuries.text">Detectar cambios de clúster de un jugador a lo largo de la temporada podría servir como sistema de alerta temprana. Si un jugador explosivo empieza a caer en clústeres de "bajo rendimiento" sin motivo aparente, podría indicar fatiga acumulada o riesgo de lesión.</p>
             </div>
         </div>
     </section>
@@ -405,23 +409,41 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>Sobre este proyecto</h3>
-                <p>Análisis de clustering aplicado al fútbol profesional usando Machine Learning no supervisado.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Enlaces</h3>
-                <a href="index.html">Inicio</a>
-                <a href="index.html#projects">Proyectos</a>
-                <a href="index.html#contact">Contacto</a>
+                <h3 data-i18n="footer.quick">Enlaces rápidos</h3>
+                <a href="index.html#about" data-i18n="nav.about">Sobre Mí</a>
+                <a href="index.html#projects" data-i18n="nav.projects">Proyectos</a>
+                <a href="index.html#education" data-i18n="nav.education">Educación</a>
+                <a href="index.html#contact" data-i18n="nav.contact">Contacto</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; <span id="currentYear"></span> Alberto López. Todos los derechos reservados.</p>
+            <p>&copy; <span id="currentYear"></span> Alberto López. <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>
         </div>
     </footer>
 
     <script src="i18n.js"></script>
     <script>
+        // Initialize i18n and language toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            // Esperar a que i18n esté disponible
+            if (window.i18n) {
+                // Obtener idioma guardado o detectado
+                const lang = window.i18n.getCurrentLanguage();
+                // Aplicar idioma (esto actualiza todos los textos y el display)
+                window.i18n.setLanguage(lang);
+            }
+
+            // Initialize language toggle button
+            const langToggle = document.getElementById('langToggle');
+            if (langToggle) {
+                langToggle.addEventListener('click', () => {
+                    const currentLang = window.i18n.getCurrentLanguage();
+                    const newLang = currentLang === 'es' ? 'en' : 'es';
+                    window.i18n.setLanguage(newLang);
+                });
+            }
+        });
+
         // Current year
         document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>

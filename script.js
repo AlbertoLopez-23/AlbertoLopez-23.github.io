@@ -234,6 +234,11 @@ function initModals() {
                 window.location.href = 'project-valor-mercado-futbol.html';
                 return;
             }
+            // Proyecto 2 (Ambulancias) redirige a página personalizada
+            if (index === 2) {
+                window.location.href = 'project-ambulancias.html';
+                return;
+            }
             openModal(index);
         });
     });

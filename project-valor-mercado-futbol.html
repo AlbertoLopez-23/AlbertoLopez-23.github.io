@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="images/icons/icinopersonal.png">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
     <style>
         .project-hero {
             min-height: 60vh;
@@ -62,10 +63,30 @@
         }
 
         .project-hero .cta-buttons {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: var(--spacing-lg);
             justify-content: center;
-            flex-wrap: wrap;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .project-hero .cta-buttons {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .project-hero .cta-buttons a:last-child {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project-hero .cta-buttons {
+                grid-template-columns: 1fr;
+            }
+            .project-hero .cta-buttons a:last-child {
+                grid-column: 1;
+            }
         }
 
         .project-section {
@@ -112,18 +133,22 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: var(--spacing-xl);
-            margin: var(--spacing-3xl) 0;
+            margin: var(--spacing-3xl) auto;
+            max-width: 1200px;
+            justify-items: center;
         }
 
         @media (max-width: 1024px) {
             .tech-stack {
                 grid-template-columns: repeat(2, 1fr);
+                max-width: 800px;
             }
         }
 
         @media (max-width: 640px) {
             .tech-stack {
                 grid-template-columns: 1fr;
+                max-width: 100%;
             }
         }
 
@@ -231,6 +256,14 @@
             margin-bottom: var(--spacing-lg);
         }
 
+        .gallery-item #chartEquipos,
+        .gallery-item #chartNacionalidades {
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
         .gallery-item .caption {
             color: var(--text-secondary);
             font-size: 0.95rem;
@@ -279,6 +312,22 @@
         .highlight-box.negative {
             border-color: rgba(255, 100, 100, 0.5);
         }
+
+        .project-hero .cta-buttons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-md) var(--spacing-lg);
+            text-decoration: none;
+            transition: all var(--transition-base);
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .project-hero .cta-buttons a i {
+            font-size: 1.1rem;
+        }
     </style>
 </head>
 <body>
@@ -289,24 +338,34 @@
                 <a href="index.html" class="logo-link">AL</a>
             </div>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html#about" class="nav-link">Sobre Mí</a></li>
-                <li><a href="index.html#experience" class="nav-link">Experiencia</a></li>
-                <li><a href="index.html#projects" class="nav-link">Proyectos</a></li>
-                <li><a href="index.html#education" class="nav-link">Educación</a></li>
-                <li><a href="index.html#contact" class="nav-link">Contacto</a></li>
+                <li><a href="index.html#about" class="nav-link" data-i18n="nav.about">Sobre Mí</a></li>
+                <li><a href="index.html#experience" class="nav-link" data-i18n="nav.experience">Experiencia</a></li>
+                <li><a href="index.html#projects" class="nav-link" data-i18n="nav.projects">Proyectos</a></li>
+                <li><a href="index.html#education" class="nav-link" data-i18n="nav.education">Educación</a></li>
+                <li><a href="index.html#contact" class="nav-link" data-i18n="nav.contact">Contacto</a></li>
             </ul>
-            <div class="nav-actions"></div>
+            <div class="nav-actions">
+                <button class="lang-toggle" id="langToggle" aria-label="Change language">
+                    <span id="langDisplay">ES</span>
+                </button>
+            </div>
         </nav>
     </header>
 
     <!-- Project Hero -->
     <section class="project-hero">
         <div class="project-hero-content">
-            <h1>Predicción de Valor de Mercado en Fútbol</h1>
-            <p class="subtitle">Detectando Ineficiencias con Machine Learning</p>
+            <h1 data-i18n="project.futbol.title">Predicción de Valor de Mercado en Fútbol</h1>
+            <p class="subtitle" data-i18n="project.futbol.subtitle">Detectando Ineficiencias con Machine Learning</p>
             <div class="cta-buttons">
+                <a href="https://github.com/AlbertoLopez-23/Data-Science-mercado-de-fichajes" target="_blank" rel="noopener noreferrer" class="btn-primary" style="background: var(--bg-tertiary);">
+                    <i class="ri-github-fill"></i> <span data-i18n="project.github">Repositorio GitHub</span>
+                </a>
+                <a href="https://albertolopez-23.github.io/Data-Science-mercado-de-fichajes/" target="_blank" rel="noopener noreferrer" class="btn-primary" style="background: var(--bg-tertiary);">
+                    <i class="ri-global-line"></i> <span data-i18n="project.web">Página Web</span>
+                </a>
                 <a href="index.html#projects" class="btn-primary" style="background: var(--bg-tertiary);">
-                    <i class="ri-arrow-left-line"></i> Volver a Proyectos
+                    <i class="ri-arrow-left-line"></i> <span data-i18n="project.back">Volver a Proyectos</span>
                 </a>
             </div>
         </div>
@@ -315,57 +374,57 @@
     <!-- El Desafío -->
     <section class="project-section">
         <a href="index.html#projects" class="back-button">
-            <i class="ri-arrow-left-line"></i> Volver a Proyectos
+            <i class="ri-arrow-left-line"></i> <span data-i18n="project.back">Volver a Proyectos</span>
         </a>
         
-        <h2>1. El Desafío: Objetivar lo Subjetivo</h2>
-        <div class="quote">
+        <h2 data-i18n="project.futbol.challenge.title">1. El Desafío: Objetivar lo Subjetivo</h2>
+        <div class="quote" data-i18n="project.futbol.challenge.quote">
             "El mercado de fichajes mueve miles de millones, pero a menudo se basa en la intuición o la especulación mediática. ¿Podemos usar datos para calcular el precio 'justo' de un jugador y detectar cuándo el mercado se equivoca?"
         </div>
-        <p>
+        <p data-i18n="project.futbol.challenge.text">
             En este proyecto personal, desarrollé un sistema de tasación objetivo fusionando tres mundos de datos: rendimiento real (Understat), valoración técnica de expertos (SoFIFA) y datos económicos (Transfermarkt). El objetivo: entrenar una IA capaz de valorar a <strong>1,875 jugadores</strong> de las grandes ligas y, lo más importante, auditar al mercado para descubrir oportunidades de inversión.
         </p>
     </section>
 
     <!-- Stack Tecnológico -->
     <section class="project-section">
-        <h2>2. Stack Tecnológico</h2>
-        <p>Un flujo de trabajo "End-to-End" centrado en la ingeniería de datos y el modelado predictivo:</p>
+        <h2 data-i18n="project.futbol.tech.title">2. Stack Tecnológico</h2>
+        <p data-i18n="project.futbol.tech.text">Un flujo de trabajo "End-to-End" centrado en la ingeniería de datos y el modelado predictivo:</p>
         
         <div class="tech-stack">
             <div class="tech-item">
-                <h4>Data Acquisition</h4>
+                <h4 data-i18n="project.futbol.tech.data">Data Acquisition</h4>
                 <ul>
-                    <li>Web Scraping masivo</li>
-                    <li>Integración de fuentes heterogéneas</li>
-                    <li>Atributos técnicos (SoFIFA)</li>
-                    <li>Métricas de rendimiento (xG/xA)</li>
-                    <li>Datos financieros (Transfermarkt)</li>
+                    <li data-i18n="project.futbol.tech.data.list1">Web Scraping masivo</li>
+                    <li data-i18n="project.futbol.tech.data.list2">Integración de fuentes heterogéneas</li>
+                    <li data-i18n="project.futbol.tech.data.list3">Atributos técnicos (SoFIFA)</li>
+                    <li data-i18n="project.futbol.tech.data.list4">Métricas de rendimiento (xG/xA)</li>
+                    <li data-i18n="project.futbol.tech.data.list5">Datos financieros (Transfermarkt)</li>
                 </ul>
             </div>
             <div class="tech-item">
-                <h4>Feature Engineering</h4>
+                <h4 data-i18n="project.futbol.tech.feature">Feature Engineering</h4>
                 <ul>
-                    <li>Normalización de variables</li>
-                    <li>Selección mediante Lasso Regression</li>
-                    <li>Análisis de correlación</li>
+                    <li data-i18n="project.futbol.tech.feature.list1">Normalización de variables</li>
+                    <li data-i18n="project.futbol.tech.feature.list2">Selección mediante Lasso Regression</li>
+                    <li data-i18n="project.futbol.tech.feature.list3">Análisis de correlación</li>
                 </ul>
             </div>
             <div class="tech-item">
-                <h4>Modelado</h4>
+                <h4 data-i18n="project.futbol.tech.modeling">Modelado</h4>
                 <ul>
-                    <li>Regresión Lineal</li>
-                    <li>SVR (Support Vector Regression)</li>
-                    <li>Redes Neuronales</li>
-                    <li>XGBoost</li>
+                    <li data-i18n="project.futbol.tech.modeling.list1">Regresión Lineal</li>
+                    <li data-i18n="project.futbol.tech.modeling.list2">SVR (Support Vector Regression)</li>
+                    <li data-i18n="project.futbol.tech.modeling.list3">Redes Neuronales</li>
+                    <li data-i18n="project.futbol.tech.modeling.list4">XGBoost</li>
                 </ul>
             </div>
             <div class="tech-item">
-                <h4>KPIs de Negocio</h4>
+                <h4 data-i18n="project.futbol.tech.kpis">KPIs de Negocio</h4>
                 <ul>
-                    <li>DRV (Diferencia Relativa de Valor)</li>
-                    <li>Métrica propia para medir discrepancias</li>
-                    <li>Análisis de ineficiencias del mercado</li>
+                    <li data-i18n="project.futbol.tech.kpis.list1">DRV (Diferencia Relativa de Valor)</li>
+                    <li data-i18n="project.futbol.tech.kpis.list2">Métrica propia para medir discrepancias</li>
+                    <li data-i18n="project.futbol.tech.kpis.list3">Análisis de ineficiencias del mercado</li>
                 </ul>
             </div>
         </div>
@@ -373,91 +432,80 @@
 
     <!-- Metodología -->
     <section class="project-section">
-        <h2>3. Metodología: La Búsqueda del Modelo Perfecto</h2>
-        <p>
+        <h2 data-i18n="project.futbol.methodology.title">3. Metodología: La Búsqueda del Modelo Perfecto</h2>
+        <p data-i18n="project.futbol.methodology.text">
             Planteé el problema desde dos enfoques para ver cuál predecía mejor el precio:
         </p>
 
         <div class="insights-grid">
             <div class="insight-card">
-                <h4>Enfoque de Micro-Segmentación</h4>
-                <p>Probé dividir a los jugadores por posición y por "clústeres de calidad" (usando K-Means) para entrenar modelos especializados.</p>
+                <h4 data-i18n="project.futbol.methodology.micro">Enfoque de Micro-Segmentación</h4>
+                <p data-i18n="project.futbol.methodology.micro.text">Probé dividir a los jugadores por posición y por "clústeres de calidad" (usando K-Means) para entrenar modelos especializados.</p>
             </div>
             <div class="insight-card">
-                <h4>Enfoque Global</h4>
-                <p>Entrené un único modelo robusto con todos los datos disponibles.</p>
+                <h4 data-i18n="project.futbol.methodology.global">Enfoque Global</h4>
+                <p data-i18n="project.futbol.methodology.global.text">Entrené un único modelo robusto con todos los datos disponibles.</p>
             </div>
         </div>
 
         <div class="highlight-box">
-            <p><strong>El Resultado:</strong> Contra mi hipótesis inicial, el enfoque global utilizando XGBoost fue muy superior (<strong>R² ≈ 0.83</strong>). Aprendí que segmentar demasiado los datos reducía la capacidad de aprendizaje del algoritmo, mientras que el modelo global era capaz de capturar mejor las complejidades del mercado al tener más ejemplos.</p>
+            <p><strong data-i18n="project.futbol.methodology.result">El Resultado:</strong> <span data-i18n="project.futbol.methodology.result.text">Contra mi hipótesis inicial, el enfoque global utilizando XGBoost fue muy superior (<strong>R² ≈ 0.83</strong>). Aprendí que segmentar demasiado los datos reducía la capacidad de aprendizaje del algoritmo, mientras que el modelo global era capaz de capturar mejor las complejidades del mercado al tener más ejemplos.</span></p>
         </div>
     </section>
 
     <!-- Hallazgos Clave -->
     <section class="project-section">
-        <h2>4. Hallazgos Clave: Las Ineficiencias del Mercado</h2>
-        <p>Esta fue la parte más valiosa del proyecto. Al comparar mi predicción objetiva (IA) contra el precio real de Transfermarkt, descubrí sesgos sistemáticos en el fútbol actual:</p>
+        <h2 data-i18n="project.futbol.findings.title">4. Hallazgos Clave: Las Ineficiencias del Mercado</h2>
+        <p data-i18n="project.futbol.findings.intro">Esta fue la parte más valiosa del proyecto. Al comparar mi predicción objetiva (IA) contra el precio real de Transfermarkt, descubrí sesgos sistemáticos en el fútbol actual:</p>
 
-        <h3>A. El "Impuesto" de la Nacionalidad</h3>
-        <p>El modelo detectó que el pasaporte influye desproporcionadamente en el precio.</p>
+        <h3 data-i18n="project.futbol.findings.nationality.title">A. El "Impuesto" de la Nacionalidad</h3>
+        <p data-i18n="project.futbol.findings.nationality.text">El modelo detectó que el pasaporte influye desproporcionadamente en el precio.</p>
         
         <div class="insights-grid">
             <div class="insight-card highlight-box positive">
-                <h4>Oportunidad de Mercado</h4>
-                <p>Nacionalidades como la islandesa aparecieron infravaloradas sistemáticamente un <strong>-14.3%</strong> respecto a su rendimiento real.</p>
+                <h4 data-i18n="project.futbol.findings.nationality.opportunity">Oportunidad de Mercado</h4>
+                <p data-i18n="project.futbol.findings.nationality.opportunity.text">Nacionalidades como la islandesa aparecieron infravaloradas sistemáticamente un <strong>-14.3%</strong> respecto a su rendimiento real.</p>
             </div>
             <div class="insight-card highlight-box negative">
-                <h4>Sobreprecio</h4>
-                <p>Por el contrario, otras nacionalidades cotizan por encima de lo que justifican sus estadísticas. Esto sugiere que los directores deportivos podrían ahorrar presupuesto scouting en mercados "menos de moda".</p>
+                <h4 data-i18n="project.futbol.findings.nationality.overprice">Sobreprecio</h4>
+                <p data-i18n="project.futbol.findings.nationality.overprice.text">Por el contrario, otras nacionalidades cotizan por encima de lo que justifican sus estadísticas. Esto sugiere que los directores deportivos podrían ahorrar presupuesto scouting en mercados "menos de moda".</p>
             </div>
         </div>
 
-        <h3>B. Clubes Sobrevalorados vs. Infravalorados</h3>
-        <p>Analizando el indicador DRV por equipos, identifiqué qué plantillas están cotizando por encima o por debajo de su valor real:</p>
+        <h3 data-i18n="project.futbol.findings.clubs.title">B. Clubes Sobrevalorados vs. Infravalorados</h3>
+        <p data-i18n="project.futbol.findings.clubs.text">Analizando el indicador DRV por equipos, identifiqué qué plantillas están cotizando por encima o por debajo de su valor real:</p>
 
         <div class="insights-grid">
             <div class="insight-card highlight-box positive">
-                <h4>Plantillas Infravaloradas</h4>
-                <p>Equipos como el <strong>RC Lens (+9.4%)</strong> o el <strong>Real Betis (+9.1%)</strong> tienen jugadores que rinden muy por encima de su precio de mercado actual. Son plantillas muy eficientes.</p>
+                <h4 data-i18n="project.futbol.findings.clubs.under">Plantillas Infravaloradas</h4>
+                <p data-i18n="project.futbol.findings.clubs.under.text">Equipos como el <strong>RC Lens (+9.4%)</strong> o el <strong>Real Betis (+9.1%)</strong> tienen jugadores que rinden muy por encima de su precio de mercado actual. Son plantillas muy eficientes.</p>
             </div>
             <div class="insight-card highlight-box negative">
-                <h4>Plantillas Sobrevaloradas</h4>
-                <p>Equipos como el <strong>Ipswich Town (-9.2%)</strong> o los <strong>Wolves (-7.2%)</strong> tienen precios de mercado inflados que no se corresponden con sus métricas objetivas de rendimiento y calidad.</p>
+                <h4 data-i18n="project.futbol.findings.clubs.over">Plantillas Sobrevaloradas</h4>
+                <p data-i18n="project.futbol.findings.clubs.over.text">Equipos como el <strong>Ipswich Town (-9.2%)</strong> o los <strong>Wolves (-7.2%)</strong> tienen precios de mercado inflados que no se corresponden con sus métricas objetivas de rendimiento y calidad.</p>
             </div>
         </div>
 
-        <h3>C. ¿Qué paga realmente el mercado?</h3>
-        <p>El análisis de correlación reveló que el mercado paga por futuro, no por presente. Las variables que más influyen en el precio no son los goles actuales (0.49), sino el <strong>Potencial (0.69)</strong> y el <strong>Rating General (0.63)</strong>. Esto confirma que el mercado de fichajes es especulativo: se paga por lo que el jugador puede llegar a ser.</p>
+        <h3 data-i18n="project.futbol.findings.market.title">C. ¿Qué paga realmente el mercado?</h3>
+        <p data-i18n="project.futbol.findings.market.text">El análisis de correlación reveló que el mercado paga por futuro, no por presente. Las variables que más influyen en el precio no son los goles actuales (0.49), sino el <strong>Potencial (0.69)</strong> y el <strong>Rating General (0.63)</strong>. Esto confirma que el mercado de fichajes es especulativo: se paga por lo que el jugador puede llegar a ser.</p>
 
-        <h3>D. El Efecto Patrocinio</h3>
-        <p>Descubrí una curiosidad de marketing: los jugadores patrocinados por marcas nicho (ej. Skechers) suelen estar infravalorados (<strong>+6.9%</strong> de valor real vs precio mercado), lo que podría indicar una oportunidad para fichar talento emergente antes de que firmen por grandes marcas.</p>
+        <h3 data-i18n="project.futbol.findings.sponsor.title">D. El Efecto Patrocinio</h3>
+        <p data-i18n="project.futbol.findings.sponsor.text">Descubrí una curiosidad de marketing: los jugadores patrocinados por marcas nicho (ej. Skechers) suelen estar infravalorados (<strong>+6.9%</strong> de valor real vs precio mercado), lo que podría indicar una oportunidad para fichar talento emergente antes de que firmen por grandes marcas.</p>
     </section>
 
     <!-- Presentación Visual -->
     <section class="project-section">
-        <h2>5. Presentación Visual</h2>
+        <h2 data-i18n="project.futbol.visual.title">5. Presentación Visual</h2>
         
         <div class="gallery">
             <div class="gallery-item">
-                <div class="placeholder">
-                    <p>Figura 6.3: Análisis de DRV por Nacionalidades</p>
-                </div>
-                <p class="caption">Análisis de DRV: Detección de nacionalidades infravaloradas por el mercado. Muestra claramente la barra roja de Islandia (-14.3%) y las verdes positivas.</p>
+                <div id="chartEquipos" style="width: 100%; height: 400px;"></div>
+                <p class="caption" data-i18n="project.futbol.chart.equipos">Top 10 Equipos por Mayor Diferencia Relativa: Comparación entre valores predichos y reales. Barras verdes indican sobreestimación (Pred > Real), barras rojas indican subestimación (Pred < Real).</p>
             </div>
 
             <div class="gallery-item">
-                <div class="placeholder">
-                    <p>Figura 6.2: Eficiencia de Plantilla</p>
-                </div>
-                <p class="caption">Eficiencia de plantilla: Comparativa entre el valor real de los jugadores (IA) y su precio de mercado actual.</p>
-            </div>
-
-            <div class="gallery-item">
-                <div class="placeholder">
-                    <p>Figura 5.5: Gráfico de Tornado de Lasso</p>
-                </div>
-                <p class="caption">Feature Importance: Desglosando qué atributos técnicos disparan el precio de un jugador.</p>
+                <div id="chartNacionalidades" style="width: 100%; height: 400px;"></div>
+                <p class="caption" data-i18n="project.futbol.chart.nacionalidades">Top 10 Nacionalidades por Mayor Diferencia Relativa: Análisis de discrepancias medias por nacionalidad. Islandia presenta la mayor desviación negativa (-14.3%), indicando que los jugadores de esta nacionalidad rinden significativamente mejor de lo que el modelo predijo.</p>
             </div>
         </div>
     </section>
@@ -466,14 +514,11 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>Sobre este proyecto</h3>
-                <p>Predicción de valor de mercado en fútbol usando Machine Learning para detectar ineficiencias del mercado.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Enlaces</h3>
-                <a href="index.html">Inicio</a>
-                <a href="index.html#projects">Proyectos</a>
-                <a href="index.html#contact">Contacto</a>
+                <h3 data-i18n="footer.quick">Enlaces rápidos</h3>
+                <a href="index.html#about" data-i18n="nav.about">Sobre Mí</a>
+                <a href="index.html#projects" data-i18n="nav.projects">Proyectos</a>
+                <a href="index.html#education" data-i18n="nav.education">Educación</a>
+                <a href="index.html#contact" data-i18n="nav.contact">Contacto</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -483,8 +528,230 @@
 
     <script src="i18n.js"></script>
     <script>
+        // Initialize i18n and language toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            // Esperar a que i18n esté disponible
+            if (window.i18n) {
+                // Obtener idioma guardado o detectado
+                const lang = window.i18n.getCurrentLanguage();
+                // Aplicar idioma (esto actualiza todos los textos y el display)
+                window.i18n.setLanguage(lang);
+            }
+
+            // Initialize language toggle button
+            const langToggle = document.getElementById('langToggle');
+            if (langToggle) {
+                langToggle.addEventListener('click', () => {
+                    const currentLang = window.i18n.getCurrentLanguage();
+                    const newLang = currentLang === 'es' ? 'en' : 'es';
+                    window.i18n.setLanguage(newLang);
+                });
+            }
+        });
+
         // Current year
         document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Datos para los gráficos
+        const equiposData = [
+            { equipo: 'Girona FC', diferencia: 6.2, tipo: 'positiva' },
+            { equipo: 'RC Celta de Vigo', diferencia: 6.5, tipo: 'positiva' },
+            { equipo: 'Wolverhampton Wanderers', diferencia: -7.2, tipo: 'negativa' },
+            { equipo: 'RCD Mallorca', diferencia: 7.3, tipo: 'positiva' },
+            { equipo: 'Sevilla FC', diferencia: 7.3, tipo: 'positiva' },
+            { equipo: 'CA Osasuna', diferencia: 8.1, tipo: 'positiva' },
+            { equipo: 'AJ Auxerre', diferencia: -8.9, tipo: 'negativa' },
+            { equipo: 'Real Betis Balompié', diferencia: 9.1, tipo: 'positiva' },
+            { equipo: 'Ipswich Town', diferencia: -9.2, tipo: 'negativa' },
+            { equipo: 'RC Lens', diferencia: 9.4, tipo: 'positiva' }
+        ];
+
+        const nacionalidadesData = [
+            { nacionalidad: 'Colombia', diferencia: 3.3, tipo: 'positiva' },
+            { nacionalidad: 'Inglaterra', diferencia: -3.3, tipo: 'negativa' },
+            { nacionalidad: 'Yugoslavia (RFSY)', diferencia: 3.8, tipo: 'positiva' },
+            { nacionalidad: 'Ghana', diferencia: 4.1, tipo: 'positiva' },
+            { nacionalidad: 'Nigeria', diferencia: 4.5, tipo: 'positiva' },
+            { nacionalidad: 'Suecia', diferencia: 5.0, tipo: 'positiva' },
+            { nacionalidad: 'Uruguay', diferencia: -5.3, tipo: 'negativa' },
+            { nacionalidad: 'Eslovenia', diferencia: -5.6, tipo: 'negativa' },
+            { nacionalidad: 'Eslovaquia', diferencia: 6.0, tipo: 'positiva' },
+            { nacionalidad: 'Islandia', diferencia: -14.3, tipo: 'negativa' }
+        ];
+
+        // Gráfico de Equipos
+        const chartEquipos = echarts.init(document.getElementById('chartEquipos'));
+        const equiposOption = {
+            title: {
+                text: 'Top 10 Equipos por Mayor Diferencia Relativa',
+                left: 'center',
+                textStyle: {
+                    color: '#98D2C0',
+                    fontSize: 18
+                }
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                },
+                formatter: function(params) {
+                    const data = params[0];
+                    const sign = data.value >= 0 ? '+' : '';
+                    return `${data.name}<br/>${sign}${data.value}%`;
+                }
+            },
+            grid: {
+                left: '15%',
+                right: '10%',
+                bottom: '10%',
+                top: '15%'
+            },
+            xAxis: {
+                type: 'value',
+                name: 'Diferencia Relativa (%)',
+                nameLocation: 'middle',
+                nameGap: 30,
+                axisLabel: {
+                    formatter: '{value}%',
+                    color: '#B0B0B0'
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#404040'
+                    }
+                },
+                splitLine: {
+                    lineStyle: {
+                        color: '#2A2A2A'
+                    }
+                }
+            },
+            yAxis: {
+                type: 'category',
+                data: equiposData.map(d => d.equipo).reverse(),
+                axisLabel: {
+                    color: '#B0B0B0',
+                    fontSize: 11
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#404040'
+                    }
+                }
+            },
+            series: [{
+                name: 'Diferencia Relativa',
+                type: 'bar',
+                data: equiposData.map(d => ({
+                    value: d.diferencia,
+                    itemStyle: {
+                        color: d.tipo === 'positiva' ? '#98D2C0' : '#FF6464'
+                    }
+                })).reverse(),
+                label: {
+                    show: true,
+                    position: 'right',
+                    formatter: function(params) {
+                        const sign = params.value >= 0 ? '+' : '';
+                        return `${sign}${params.value}%`;
+                    },
+                    color: '#E0E0E0',
+                    fontSize: 11
+                }
+            }]
+        };
+        chartEquipos.setOption(equiposOption);
+
+        // Gráfico de Nacionalidades
+        const chartNacionalidades = echarts.init(document.getElementById('chartNacionalidades'));
+        const nacionalidadesOption = {
+            title: {
+                text: 'Top 10 Nacionalidades por Mayor Diferencia Relativa',
+                left: 'center',
+                textStyle: {
+                    color: '#98D2C0',
+                    fontSize: 18
+                }
+            },
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                },
+                formatter: function(params) {
+                    const data = params[0];
+                    const sign = data.value >= 0 ? '+' : '';
+                    return `${data.name}<br/>${sign}${data.value}%`;
+                }
+            },
+            grid: {
+                left: '20%',
+                right: '10%',
+                bottom: '10%',
+                top: '15%'
+            },
+            xAxis: {
+                type: 'value',
+                name: 'Diferencia Relativa (%)',
+                nameLocation: 'middle',
+                nameGap: 30,
+                axisLabel: {
+                    formatter: '{value}%',
+                    color: '#B0B0B0'
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#404040'
+                    }
+                },
+                splitLine: {
+                    lineStyle: {
+                        color: '#2A2A2A'
+                    }
+                }
+            },
+            yAxis: {
+                type: 'category',
+                data: nacionalidadesData.map(d => d.nacionalidad).reverse(),
+                axisLabel: {
+                    color: '#B0B0B0',
+                    fontSize: 11
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#404040'
+                    }
+                }
+            },
+            series: [{
+                name: 'Diferencia Relativa',
+                type: 'bar',
+                data: nacionalidadesData.map(d => ({
+                    value: d.diferencia,
+                    itemStyle: {
+                        color: d.tipo === 'positiva' ? '#98D2C0' : '#FF6464'
+                    }
+                })).reverse(),
+                label: {
+                    show: true,
+                    position: 'right',
+                    formatter: function(params) {
+                        const sign = params.value >= 0 ? '+' : '';
+                        return `${sign}${params.value}%`;
+                    },
+                    color: '#E0E0E0',
+                    fontSize: 11
+                }
+            }]
+        };
+        chartNacionalidades.setOption(nacionalidadesOption);
+
+        // Responsive
+        window.addEventListener('resize', function() {
+            chartEquipos.resize();
+            chartNacionalidades.resize();
+        });
     </script>
 </body>
 </html>
