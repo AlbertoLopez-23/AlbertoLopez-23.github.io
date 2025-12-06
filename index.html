@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Personal website - Portfolio and professional information">
     <title>Alberto López - Personal Website</title>
+    <link rel="icon" type="image/png" href="images/icons/icinopersonal.png">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,6 +17,7 @@
             </div>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#about" class="nav-link" data-i18n="nav.about">Sobre Mí</a></li>
+                <li><a href="#experience" class="nav-link" data-i18n="nav.experience">Experiencia</a></li>
                 <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Proyectos</a></li>
                 <li><a href="#education" class="nav-link" data-i18n="nav.education">Educación</a></li>
                 <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contacto</a></li>
@@ -34,12 +36,9 @@
             <div class="hero-text parallax-element" data-speed="0.5">
                 <h1 class="hero-title">
                     <span class="greeting" data-i18n="hero.greeting">Hola, soy</span>
-                    <span class="name">Alberto López</span>
+                    <span class="name">Alberto López Bernal</span>
                 </h1>
-                <p class="hero-subtitle" data-i18n="hero.subtitle">Desarrollador especializado en Inteligencia Artificial y Machine Learning</p>
-                <div class="hero-cta">
-                    <a href="#about" class="btn-primary" data-i18n="hero.cta">Conoce más</a>
-                </div>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">Analista de Datos</p>
             </div>
         </div>
     </section>
@@ -54,58 +53,53 @@
         <div class="about-content">
             <div class="about-block reveal-element" data-reveal="fade-up">
                 <div class="about-text">
-                    <h3 data-i18n="about.intro.title">Introducción</h3>
-                    <p data-i18n="about.intro.text">Soy un desarrollador apasionado por la Inteligencia Artificial y el Machine Learning. Me especializo en crear soluciones innovadoras que combinan tecnología de vanguardia con aplicaciones prácticas del mundo real.</p>
+                    <p data-i18n="about.intro.text" class="about-intro">Hola, soy Alberto. Matemático y apasionado de los datos.</p>
                 </div>
             </div>
 
             <div class="about-block reveal-element" data-reveal="fade-up" data-delay="100">
                 <div class="about-text">
-                    <h3 data-i18n="about.skills.title">Habilidades y Stack Tecnológico</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <span class="skill-name" data-i18n="about.skills.python">Python</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name" data-i18n="about.skills.ml">Machine Learning</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name" data-i18n="about.skills.dl">Deep Learning</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name" data-i18n="about.skills.tensorflow">TensorFlow / PyTorch</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 75%"></div>
-                            </div>
-                        </div>
-                    </div>
+                    <h3 data-i18n="about.what.title">Lo que hago</h3>
+                    <p data-i18n="about.what.text" class="about-intro">Tengo base de matemático y vocación de analista. Estudié Matemáticas porque me gusta la lógica y el pensamiento abstracto, y me especialicé en Big Data y Visual Analytics porque quería aplicar todo eso a problemas reales. Disfruto encontrando respuestas en los datos y traduciéndolas para que se entiendan fácil.</p>
                 </div>
             </div>
 
             <div class="about-block reveal-element" data-reveal="fade-up" data-delay="200">
                 <div class="about-text">
-                    <h3 data-i18n="about.interests.title">Intereses</h3>
-                    <p data-i18n="about.interests.text">Me interesa especialmente el desarrollo de modelos de IA generativa, procesamiento de lenguaje natural, y la aplicación de técnicas de aprendizaje automático para resolver problemas complejos en diversos dominios.</p>
+                    <h3 data-i18n="about.origin.title">De dónde vengo</h3>
+                    <p data-i18n="about.origin.text" class="about-intro">Soy una mezcla de culturas: nací en Madrid, crecí en Galicia y ahora vivo en Badajoz. Además, he tenido la suerte de vivir fuera dos veces: pasé un año en EE. UU. y otro en Polonia. Estas experiencias no solo me dieron un inglés fluido, sino que me enseñaron a espabilarme y adaptarme rápido a cualquier sitio o equipo de trabajo.</p>
                 </div>
             </div>
 
             <div class="about-block reveal-element" data-reveal="fade-up" data-delay="300">
                 <div class="about-text">
-                    <h3 data-i18n="about.values.title">Valores Profesionales</h3>
-                    <ul class="values-list">
-                        <li data-i18n="about.values.innovation">Innovación constante</li>
-                        <li data-i18n="about.values.quality">Calidad en cada proyecto</li>
-                        <li data-i18n="about.values.learning">Aprendizaje continuo</li>
-                        <li data-i18n="about.values.collaboration">Colaboración efectiva</li>
+                    <h3 data-i18n="about.personality.title">Cómo soy</h3>
+                    <p data-i18n="about.personality.text" class="about-intro">Me considero una persona positiva y tranquila. Para desconectar del trabajo, necesito cambiar el chip: me ayuda mucho ir al gimnasio, dar paseos largos o simplemente pasar un buen rato con mis amigos. El surf también me gusta, pero al final, lo que realmente me carga las pilas para rendir bien es mantener ese equilibrio entre estar activo y disfrutar de mi gente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
+        <div class="section-header">
+            <h2 class="section-title" data-i18n="experience.title">Experiencia Profesional</h2>
+            <div class="section-divider"></div>
+        </div>
+
+        <div class="experience-timeline">
+            <div class="timeline-item reveal-element" data-reveal="fade-right">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date" data-i18n="experience.setenova.date">Febrero 2025 - Actualidad</div>
+                    <h3 class="timeline-title" data-i18n="experience.setenova.title">Analista e Ingeniero de Datos Junior</h3>
+                    <p class="timeline-institution" data-i18n="experience.setenova.company">Setenova</p>
+                    <ul class="timeline-description experience-list">
+                        <li data-i18n="experience.setenova.desc1">Participación activa en proyectos variados, colaborando en equipos multidisciplinarios y asumiendo responsabilidades en todas las fases del ciclo de vida del dato, desde la recolección hasta el desarrollo de soluciones.</li>
+                        <li data-i18n="experience.setenova.desc5">Dirección de proyectos y coordinación de equipos, liderando iniciativas y asegurando la entrega exitosa de objetivos.</li>
+                        <li data-i18n="experience.setenova.desc2">Diseño y desarrollo de flujos de trabajo automatizados con Airflow, optimizando procesos y asegurando la eficiencia operativa.</li>
+                        <li data-i18n="experience.setenova.desc3">Programación y automatización de tareas con Python, asegurando la máxima calidad en la recolección, limpieza y procesamiento de la información, así como la gestión y consulta de bases de datos con PostgreSQL para garantizar la integridad y disponibilidad de los datos.</li>
+                        <li data-i18n="experience.setenova.desc4">Integración de herramientas de inteligencia artificial para el análisis avanzado de datos, impulsando la innovación y la toma de decisiones basadas en información precisa.</li>
                     </ul>
                 </div>
             </div>
@@ -187,31 +181,89 @@
             <div class="timeline-item reveal-element" data-reveal="fade-right">
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
-                    <div class="timeline-date" data-i18n="education.main.date">2020 - 2024</div>
-                    <h3 class="timeline-title" data-i18n="education.main.title">Grado en Ingeniería Informática</h3>
-                    <p class="timeline-institution" data-i18n="education.main.institution">Universidad [Placeholder]</p>
-                    <p class="timeline-description" data-i18n="education.main.description">Especialización en Inteligencia Artificial y Machine Learning. Proyectos destacados en procesamiento de datos y desarrollo de modelos predictivos.</p>
+                    <div class="timeline-date" data-i18n="education.master.date">2024 - 2025</div>
+                    <h3 class="timeline-title" data-i18n="education.master.title">Máster en Big Data & Visual Analytics</h3>
+                    <p class="timeline-institution" data-i18n="education.master.institution">Universidad Internacional de La Rioja (UNIR)</p>
                 </div>
             </div>
 
             <div class="timeline-item reveal-element" data-reveal="fade-right" data-delay="100">
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
-                    <div class="timeline-date" data-i18n="education.course1.date">2023</div>
-                    <h3 class="timeline-title" data-i18n="education.course1.title">Certificación en Deep Learning</h3>
-                    <p class="timeline-institution" data-i18n="education.course1.institution">Coursera / DeepLearning.AI</p>
-                    <p class="timeline-description" data-i18n="education.course1.description">Especialización completa en redes neuronales profundas y aplicaciones prácticas.</p>
+                    <div class="timeline-date" data-i18n="education.degree.date">2018 - 2024</div>
+                    <h3 class="timeline-title" data-i18n="education.degree.title">Grado en Matemáticas</h3>
+                    <p class="timeline-institution" data-i18n="education.degree.institution">Universidad de Extremadura</p>
                 </div>
             </div>
 
             <div class="timeline-item reveal-element" data-reveal="fade-right" data-delay="200">
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
-                    <div class="timeline-date" data-i18n="education.course2.date">2022</div>
-                    <h3 class="timeline-title" data-i18n="education.course2.title">Machine Learning Engineer</h3>
-                    <p class="timeline-institution" data-i18n="education.course2.institution">Google Cloud</p>
-                    <p class="timeline-description" data-i18n="education.course2.description">Certificación en desarrollo e implementación de modelos de ML en la nube.</p>
+                    <div class="timeline-date" data-i18n="education.exchange.date">2022 - 2023</div>
+                    <h3 class="timeline-title" data-i18n="education.exchange.title">Grado en Matemáticas</h3>
+                    <p class="timeline-institution" data-i18n="education.exchange.institution">Uniwersytet Zielonogórski</p>
                 </div>
+            </div>
+
+            <div class="timeline-item reveal-element" data-reveal="fade-right" data-delay="300">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date" data-i18n="education.highschool.date">2016 - 2017</div>
+                    <h3 class="timeline-title" data-i18n="education.highschool.title">Año Académico en EE.UU</h3>
+                    <p class="timeline-institution" data-i18n="education.highschool.institution">St. John Paul II Catholic High School, Huntsville, Alabama, EE.UU</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section id="languages" class="languages-section">
+        <div class="section-header">
+            <h2 class="section-title" data-i18n="languages.title">Idiomas</h2>
+            <div class="section-divider"></div>
+        </div>
+
+        <div class="languages-grid">
+            <div class="language-item reveal-element" data-reveal="fade-up">
+                <h3 data-i18n="languages.spanish.name">Español</h3>
+                <p class="language-level" data-i18n="languages.spanish.level">Nativo</p>
+            </div>
+            <div class="language-item reveal-element" data-reveal="fade-up" data-delay="100">
+                <h3 data-i18n="languages.galician.name">Gallego</h3>
+                <p class="language-level" data-i18n="languages.galician.level">Nativo</p>
+            </div>
+            <div class="language-item reveal-element" data-reveal="fade-up" data-delay="200">
+                <h3 data-i18n="languages.english.name">Inglés</h3>
+                <p class="language-level" data-i18n="languages.english.level">Nivel C1</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications-section">
+        <div class="section-header">
+            <h2 class="section-title" data-i18n="certifications.title">Certificaciones</h2>
+            <div class="section-divider"></div>
+        </div>
+
+        <div class="certifications-grid">
+            <div class="certification-item reveal-element" data-reveal="fade-up">
+                <div class="cert-icon">
+                    <img src="images/icons/awsicon.png" alt="AWS Certified Cloud Practitioner" />
+                </div>
+                <h3 data-i18n="certifications.aws.title">AWS Certified Cloud Practitioner</h3>
+            </div>
+            <div class="certification-item reveal-element" data-reveal="fade-up" data-delay="100">
+                <div class="cert-icon">
+                    <img src="images/icons/university-of-cambridge-logo-png_seeklogo-310247.png" alt="Certificate in Advanced English (C1)" />
+                </div>
+                <h3 data-i18n="certifications.english.title">Certificate in Advanced English (C1)</h3>
+            </div>
+            <div class="certification-item reveal-element" data-reveal="fade-up" data-delay="200">
+                <div class="cert-icon">
+                    <img src="images/icons/icons8-azur-48.png" alt="Azure Fundamentals AZ-900" />
+                </div>
+                <h3 data-i18n="certifications.azure.title">Azure Fundamentals AZ-900</h3>
             </div>
         </div>
     </section>
@@ -227,7 +279,7 @@
             <p class="contact-intro reveal-element" data-reveal="fade-up" data-i18n="contact.intro">¿Tienes un proyecto en mente? Me encantaría escucharte y colaborar contigo.</p>
             
             <div class="contact-methods">
-                <a href="mailto:alberto@example.com" class="contact-item reveal-element" data-reveal="fade-up" data-delay="100">
+                <a href="mailto:albertolpzbernal@gmail.com" class="contact-item reveal-element" data-reveal="fade-up" data-delay="100">
                     <div class="contact-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
@@ -236,11 +288,11 @@
                     </div>
                     <div class="contact-info">
                         <h3 data-i18n="contact.email.label">Email</h3>
-                        <p class="contact-value">alberto@example.com</p>
+                        <p class="contact-value">albertolpzbernal@gmail.com</p>
                     </div>
                 </a>
 
-                <a href="https://linkedin.com/in/alberto-lopez" target="_blank" rel="noopener noreferrer" class="contact-item reveal-element" data-reveal="fade-up" data-delay="200">
+                <a href="https://www.linkedin.com/in/alberto-lopez-bernal" target="_blank" rel="noopener noreferrer" class="contact-item reveal-element" data-reveal="fade-up" data-delay="200">
                     <div class="contact-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
@@ -251,6 +303,49 @@
                         <p class="contact-value" data-i18n="contact.linkedin.value">Conectar en LinkedIn</p>
                     </div>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="section-header">
+            <h2 class="section-title" data-i18n="about.skills.title">Habilidades</h2>
+            <div class="section-divider"></div>
+        </div>
+
+        <div class="about-content">
+            <div class="about-block reveal-element" data-reveal="fade-up">
+                <div class="about-text">
+                    <div class="skills-grid-modern">
+                        <div class="skill-category">
+                            <h4 data-i18n="about.skills.languages">Lenguajes de Programación</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">R</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Fortran</span>
+                                <span class="skill-tag">MATLAB</span>
+                                <span class="skill-tag">SQL</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4 data-i18n="about.skills.tools">Herramientas y Tecnologías</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Excel</span>
+                                <span class="skill-tag">MongoDB</span>
+                                <span class="skill-tag">PostgreSQL</span>
+                                <span class="skill-tag">Airflow</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4 data-i18n="about.skills.other">Otras habilidades</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Análisis de datos</span>
+                                <span class="skill-tag">Resolución de problemas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

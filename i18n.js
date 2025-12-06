@@ -5,13 +5,14 @@ const translations = {
     es: {
         // Navegación
         'nav.about': 'Sobre Mí',
+        'nav.experience': 'Experiencia',
         'nav.projects': 'Proyectos',
         'nav.education': 'Educación',
         'nav.contact': 'Contacto',
         
         // Hero
         'hero.greeting': 'Hola, soy',
-        'hero.subtitle': 'Desarrollador especializado en Inteligencia Artificial y Machine Learning',
+        'hero.subtitle': 'Analista de Datos',
         'hero.cta': 'Conoce más',
         
         // Preview Cards
@@ -30,20 +31,17 @@ const translations = {
         
         // About
         'about.title': 'Sobre Mí',
-        'about.intro.title': 'Introducción',
-        'about.intro.text': 'Soy un desarrollador apasionado por la Inteligencia Artificial y el Machine Learning. Me especializo en crear soluciones innovadoras que combinan tecnología de vanguardia con aplicaciones prácticas del mundo real.',
-        'about.skills.title': 'Habilidades y Stack Tecnológico',
-        'about.skills.python': 'Python',
-        'about.skills.ml': 'Machine Learning',
-        'about.skills.dl': 'Deep Learning',
-        'about.skills.tensorflow': 'TensorFlow / PyTorch',
-        'about.interests.title': 'Intereses',
-        'about.interests.text': 'Me interesa especialmente el desarrollo de modelos de IA generativa, procesamiento de lenguaje natural, y la aplicación de técnicas de aprendizaje automático para resolver problemas complejos en diversos dominios.',
-        'about.values.title': 'Valores Profesionales',
-        'about.values.innovation': 'Innovación constante',
-        'about.values.quality': 'Calidad en cada proyecto',
-        'about.values.learning': 'Aprendizaje continuo',
-        'about.values.collaboration': 'Colaboración efectiva',
+        'about.intro.text': 'Hola, soy Alberto. Matemático y apasionado de los datos.',
+        'about.what.title': 'Lo que hago',
+        'about.what.text': 'Tengo base de matemático y vocación de analista. Estudié Matemáticas porque me gusta la lógica y el pensamiento abstracto, y me especialicé en Big Data y Visual Analytics porque quería aplicar todo eso a problemas reales. Disfruto encontrando respuestas en los datos y traduciéndolas para que se entiendan fácil.',
+        'about.origin.title': 'De dónde vengo',
+        'about.origin.text': 'Soy una mezcla de culturas: nací en Madrid, crecí en Galicia y ahora vivo en Badajoz. Además, he tenido la suerte de vivir fuera dos veces: pasé un año en EE. UU. y otro en Polonia. Estas experiencias no solo me dieron un inglés fluido, sino que me enseñaron a espabilarme y adaptarme rápido a cualquier sitio o equipo de trabajo.',
+        'about.personality.title': 'Cómo soy',
+        'about.personality.text': 'Me considero una persona positiva y tranquila. Para desconectar del trabajo, necesito cambiar el chip: me ayuda mucho ir al gimnasio, dar paseos largos o simplemente pasar un buen rato con mis amigos. El surf también me gusta, pero al final, lo que realmente me carga las pilas para rendir bien es mantener ese equilibrio entre estar activo y disfrutar de mi gente.',
+        'about.skills.title': 'Habilidades',
+        'about.skills.languages': 'Lenguajes de Programación',
+        'about.skills.tools': 'Herramientas y Tecnologías',
+        'about.skills.other': 'Otras habilidades',
         
         // Projects
         'projects.title': 'Proyectos',
@@ -66,18 +64,44 @@ const translations = {
         
         // Education
         'education.title': 'Educación',
-        'education.main.date': '2020 - 2024',
-        'education.main.title': 'Grado en Ingeniería Informática',
-        'education.main.institution': 'Universidad [Placeholder]',
-        'education.main.description': 'Especialización en Inteligencia Artificial y Machine Learning. Proyectos destacados en procesamiento de datos y desarrollo de modelos predictivos.',
-        'education.course1.date': '2023',
-        'education.course1.title': 'Certificación en Deep Learning',
-        'education.course1.institution': 'Coursera / DeepLearning.AI',
-        'education.course1.description': 'Especialización completa en redes neuronales profundas y aplicaciones prácticas.',
-        'education.course2.date': '2022',
-        'education.course2.title': 'Machine Learning Engineer',
-        'education.course2.institution': 'Google Cloud',
-        'education.course2.description': 'Certificación en desarrollo e implementación de modelos de ML en la nube.',
+        'education.master.date': '2024 - 2025',
+        'education.master.title': 'Máster en Big Data & Visual Analytics',
+        'education.master.institution': 'Universidad Internacional de La Rioja (UNIR)',
+        'education.degree.date': '2018 - 2024',
+        'education.degree.title': 'Grado en Matemáticas',
+        'education.degree.institution': 'Universidad de Extremadura',
+        'education.exchange.date': '2022 - 2023',
+        'education.exchange.title': 'Grado en Matemáticas',
+        'education.exchange.institution': 'Uniwersytet Zielonogórski',
+        'education.highschool.date': '2016 - 2017',
+        'education.highschool.title': 'Año Académico en EE.UU',
+        'education.highschool.institution': 'St. John Paul II Catholic High School, Huntsville, Alabama, EE.UU',
+        
+        // Experience
+        'experience.title': 'Experiencia Profesional',
+        'experience.setenova.date': 'Febrero 2025 - Actualidad',
+        'experience.setenova.title': 'Analista e Ingeniero de Datos Junior',
+        'experience.setenova.company': 'Setenova',
+        'experience.setenova.desc1': 'Participación activa en proyectos variados, colaborando en equipos multidisciplinarios y asumiendo responsabilidades en todas las fases del ciclo de vida del dato, desde la recolección hasta el desarrollo de soluciones.',
+        'experience.setenova.desc5': 'Dirección de proyectos y coordinación de equipos, liderando iniciativas y asegurando la entrega exitosa de objetivos.',
+        'experience.setenova.desc2': 'Diseño y desarrollo de flujos de trabajo automatizados con Airflow, optimizando procesos y asegurando la eficiencia operativa.',
+        'experience.setenova.desc3': 'Programación y automatización de tareas con Python, asegurando la máxima calidad en la recolección, limpieza y procesamiento de la información, así como la gestión y consulta de bases de datos con PostgreSQL para garantizar la integridad y disponibilidad de los datos.',
+        'experience.setenova.desc4': 'Integración de herramientas de inteligencia artificial para el análisis avanzado de datos, impulsando la innovación y la toma de decisiones basadas en información precisa.',
+        
+        // Languages
+        'languages.title': 'Idiomas',
+        'languages.spanish.name': 'Español',
+        'languages.spanish.level': 'Nativo',
+        'languages.galician.name': 'Gallego',
+        'languages.galician.level': 'Nativo',
+        'languages.english.name': 'Inglés',
+        'languages.english.level': 'Nivel C1',
+        
+        // Certifications
+        'certifications.title': 'Certificaciones',
+        'certifications.aws.title': 'AWS Certified Cloud Practitioner',
+        'certifications.english.title': 'Certificate in Advanced English (C1)',
+        'certifications.azure.title': 'Azure Fundamentals AZ-900',
         
         // Contact
         'contact.title': 'Contacto',
@@ -96,13 +120,14 @@ const translations = {
     en: {
         // Navigation
         'nav.about': 'About Me',
+        'nav.experience': 'Experience',
         'nav.projects': 'Projects',
         'nav.education': 'Education',
         'nav.contact': 'Contact',
         
         // Hero
         'hero.greeting': 'Hello, I\'m',
-        'hero.subtitle': 'Developer specialized in Artificial Intelligence and Machine Learning',
+        'hero.subtitle': 'Data Analyst',
         'hero.cta': 'Learn more',
         
         // Preview Cards
@@ -121,20 +146,17 @@ const translations = {
         
         // About
         'about.title': 'About Me',
-        'about.intro.title': 'Introduction',
-        'about.intro.text': 'I am a developer passionate about Artificial Intelligence and Machine Learning. I specialize in creating innovative solutions that combine cutting-edge technology with real-world practical applications.',
-        'about.skills.title': 'Skills and Tech Stack',
-        'about.skills.python': 'Python',
-        'about.skills.ml': 'Machine Learning',
-        'about.skills.dl': 'Deep Learning',
-        'about.skills.tensorflow': 'TensorFlow / PyTorch',
-        'about.interests.title': 'Interests',
-        'about.interests.text': 'I am particularly interested in generative AI model development, natural language processing, and applying machine learning techniques to solve complex problems across various domains.',
-        'about.values.title': 'Professional Values',
-        'about.values.innovation': 'Constant innovation',
-        'about.values.quality': 'Quality in every project',
-        'about.values.learning': 'Continuous learning',
-        'about.values.collaboration': 'Effective collaboration',
+        'about.intro.text': 'Hello, I\'m Alberto. Mathematician and data enthusiast.',
+        'about.what.title': 'What I do',
+        'about.what.text': 'I have a mathematician\'s foundation and an analyst\'s vocation. I studied Mathematics because I like logic and abstract thinking, and I specialized in Big Data and Visual Analytics because I wanted to apply all of that to real problems. I enjoy finding answers in data and translating them so they\'re easy to understand.',
+        'about.origin.title': 'Where I come from',
+        'about.origin.text': 'I\'m a mix of cultures: I was born in Madrid, grew up in Galicia and now live in Badajoz. Plus, I\'ve been lucky enough to live abroad twice: I spent a year in the USA and another in Poland. These experiences not only gave me fluent English, but also taught me to be resourceful and adapt quickly to any place or work team.',
+        'about.personality.title': 'How I am',
+        'about.personality.text': 'I consider myself a positive and calm person. To disconnect from work, I need to switch gears: going to the gym, taking long walks, or simply having a good time with my friends helps me a lot. I also like surfing, but in the end, what really recharges my batteries to perform well is maintaining that balance between being active and enjoying my people.',
+        'about.skills.title': 'Skills',
+        'about.skills.languages': 'Programming Languages',
+        'about.skills.tools': 'Tools and Technologies',
+        'about.skills.other': 'Other skills',
         
         // Projects
         'projects.title': 'Projects',
@@ -157,18 +179,44 @@ const translations = {
         
         // Education
         'education.title': 'Education',
-        'education.main.date': '2020 - 2024',
-        'education.main.title': 'Bachelor\'s in Computer Engineering',
-        'education.main.institution': 'University [Placeholder]',
-        'education.main.description': 'Specialization in Artificial Intelligence and Machine Learning. Outstanding projects in data processing and predictive model development.',
-        'education.course1.date': '2023',
-        'education.course1.title': 'Deep Learning Certification',
-        'education.course1.institution': 'Coursera / DeepLearning.AI',
-        'education.course1.description': 'Complete specialization in deep neural networks and practical applications.',
-        'education.course2.date': '2022',
-        'education.course2.title': 'Machine Learning Engineer',
-        'education.course2.institution': 'Google Cloud',
-        'education.course2.description': 'Certification in developing and implementing ML models in the cloud.',
+        'education.master.date': '2024 - 2025',
+        'education.master.title': 'Master\'s in Big Data & Visual Analytics',
+        'education.master.institution': 'Universidad Internacional de La Rioja (UNIR)',
+        'education.degree.date': '2018 - 2024',
+        'education.degree.title': 'Bachelor\'s in Mathematics',
+        'education.degree.institution': 'Universidad de Extremadura',
+        'education.exchange.date': '2022 - 2023',
+        'education.exchange.title': 'Bachelor\'s in Mathematics',
+        'education.exchange.institution': 'Uniwersytet Zielonogórski',
+        'education.highschool.date': '2016 - 2017',
+        'education.highschool.title': 'Academic Year in USA',
+        'education.highschool.institution': 'St. John Paul II Catholic High School, Huntsville, Alabama, USA',
+        
+        // Experience
+        'experience.title': 'Professional Experience',
+        'experience.setenova.date': 'February 2025 - Present',
+        'experience.setenova.title': 'Junior Data Analyst and Engineer',
+        'experience.setenova.company': 'Setenova',
+        'experience.setenova.desc1': 'Active participation in various projects, collaborating in multidisciplinary teams and assuming responsibilities in all phases of the data lifecycle, from collection to solution development.',
+        'experience.setenova.desc5': 'Project management and team coordination, leading initiatives and ensuring successful delivery of objectives.',
+        'experience.setenova.desc2': 'Design and development of automated workflows with Airflow, optimizing processes and ensuring operational efficiency.',
+        'experience.setenova.desc3': 'Programming and task automation with Python, ensuring maximum quality in data collection, cleaning and processing, as well as database management and querying with PostgreSQL to guarantee data integrity and availability.',
+        'experience.setenova.desc4': 'Integration of artificial intelligence tools for advanced data analysis, driving innovation and data-driven decision making.',
+        
+        // Languages
+        'languages.title': 'Languages',
+        'languages.spanish.name': 'Spanish',
+        'languages.spanish.level': 'Native',
+        'languages.galician.name': 'Galician',
+        'languages.galician.level': 'Native',
+        'languages.english.name': 'English',
+        'languages.english.level': 'C1 Level',
+        
+        // Certifications
+        'certifications.title': 'Certifications',
+        'certifications.aws.title': 'AWS Certified Cloud Practitioner',
+        'certifications.english.title': 'Certificate in Advanced English (C1)',
+        'certifications.azure.title': 'Azure Fundamentals AZ-900',
         
         // Contact
         'contact.title': 'Contact',
