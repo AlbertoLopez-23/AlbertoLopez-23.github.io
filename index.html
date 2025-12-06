@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal website - Portfolio and professional information">
+    <title>Alberto López - Personal Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <nav class="nav-container">
+            <div class="nav-logo">
+                <a href="#hero" class="logo-link">AL</a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#about" class="nav-link" data-i18n="nav.about">Sobre Mí</a></li>
+                <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Proyectos</a></li>
+                <li><a href="#education" class="nav-link" data-i18n="nav.education">Educación</a></li>
+                <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contacto</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="lang-toggle" id="langToggle" aria-label="Change language">
+                    <span id="langDisplay">ES</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section / Panel Principal -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <div class="hero-text parallax-element" data-speed="0.5">
+                <h1 class="hero-title">
+                    <span class="greeting" data-i18n="hero.greeting">Hola, soy</span>
+                    <span class="name">Alberto López</span>
+                </h1>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">Desarrollador especializado en Inteligencia Artificial y Machine Learning</p>
+                <div class="hero-cta">
+                    <a href="#about" class="btn-primary" data-i18n="hero.cta">Conoce más</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="about-section">
+        <div class="section-header">
+            <h2 class="section-title" data-i18n="about.title">Sobre Mí</h2>
+            <div class="section-divider"></div>
+        </div>
+
+        <div class="about-content">
+            <div class="about-block reveal-element" data-reveal="fade-up">
+                <div class="about-text">
+                    <h3 data-i18n="about.intro.title">Introducción</h3>
+                    <p data-i18n="about.intro.text">Soy un desarrollador apasionado por la Inteligencia Artificial y el Machine Learning. Me especializo en crear soluciones innovadoras que combinan tecnología de vanguardia con aplicaciones prácticas del mundo real.</p>
+                </div>
+            </div>
+
+            <div class="about-block reveal-element" data-reveal="fade-up" data-delay="100">
+                <div class="about-text">
+                    <h3 data-i18n="about.skills.title">Habilidades y Stack Tecnológico</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <span class="skill-name" data-i18n="about.skills.python">Python</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name" data-i18n="about.skills.ml">Machine Learning</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name" data-i18n="about.skills.dl">Deep Learning</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name" data-i18n="about.skills.tensorflow">TensorFlow / PyTorch</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-block reveal-element" data-reveal="fade-up" data-delay="200">
+                <div class="about-text">
+                    <h3 data-i18n="about.interests.title">Intereses</h3>
+                    <p data-i18n="about.interests.text">Me interesa especialmente el desarrollo de modelos de IA generativa, procesamiento de lenguaje natural, y la aplicación de técnicas de aprendizaje automático para resolver problemas complejos en diversos dominios.</p>
+                </div>
+            </div>
+
+            <div class="about-block reveal-element" data-reveal="fade-up" data-delay="300">
+                <div class="about-text">
+                    <h3 data-i18n="about.values.title">Valores Profesionales</h3>
+                    <ul class="values-list">
+                        <li data-i18n="about.values.innovation">Innovación constante</li>
+                        <li data-i18n="about.values.quality">Calidad en cada proyecto</li>
+                        <li data-i18n="about.values.learning">Aprendizaje continuo</li>
+                        <li data-i18n="about.values.collaboration">Colaboración efectiva</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="section-header">
+            <h2 class="section-title" data-i18n="projects.title">Proyectos</h2>
+            <div class="section-divider"></div>
+        </div>
+
+        <div class="bento-grid">
+            <div class="bento-box bento-large reveal-element" data-reveal="fade-up" data-project="0">
+                <div class="bento-content">
+                    <div class="bento-icon">🤖</div>
+                    <h3 class="bento-title" data-i18n="projects.0.title">AI Project Alpha</h3>
+                    <p class="bento-desc" data-i18n="projects.0.short">Sistema avanzado de procesamiento de datos con IA</p>
+                    <div class="bento-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">NLP</span>
+                    </div>
+                </div>
+                <div class="bento-overlay"></div>
+            </div>
+
+            <div class="bento-box reveal-element" data-reveal="fade-up" data-delay="100" data-project="1">
+                <div class="bento-content">
+                    <div class="bento-icon">🧠</div>
+                    <h3 class="bento-title" data-i18n="projects.1.title">Machine Learning Tool</h3>
+                    <p class="bento-desc" data-i18n="projects.1.short">Herramienta para entrenamiento de modelos ML</p>
+                    <div class="bento-tags">
+                        <span class="tag">Scikit-learn</span>
+                        <span class="tag">Pandas</span>
+                    </div>
+                </div>
+                <div class="bento-overlay"></div>
+            </div>
+
+            <div class="bento-box reveal-element" data-reveal="fade-up" data-delay="200" data-project="2">
+                <div class="bento-content">
+                    <div class="bento-icon">🔬</div>
+                    <h3 class="bento-title" data-i18n="projects.2.title">Neural Network App</h3>
+                    <p class="bento-desc" data-i18n="projects.2.short">Aplicación de redes neuronales profundas</p>
+                    <div class="bento-tags">
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">Deep Learning</span>
+                    </div>
+                </div>
+                <div class="bento-overlay"></div>
+            </div>
+
+            <div class="bento-box bento-tall reveal-element" data-reveal="fade-up" data-delay="300" data-project="3">
+                <div class="bento-content">
+                    <div class="bento-icon">🚀</div>
+                    <h3 class="bento-title" data-i18n="projects.3.title">Deep Learning Platform</h3>
+                    <p class="bento-desc" data-i18n="projects.3.short">Plataforma completa para desarrollo de modelos DL</p>
+                    <div class="bento-tags">
+                        <span class="tag">Keras</span>
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">Cloud</span>
+                    </div>
+                </div>
+                <div class="bento-overlay"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education-section">
+        <div class="section-header">
+            <h2 class="section-title" data-i18n="education.title">Educación</h2>
+            <div class="section-divider"></div>
+        </div>
+
+        <div class="education-timeline">
+            <div class="timeline-item reveal-element" data-reveal="fade-right">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date" data-i18n="education.main.date">2020 - 2024</div>
+                    <h3 class="timeline-title" data-i18n="education.main.title">Grado en Ingeniería Informática</h3>
+                    <p class="timeline-institution" data-i18n="education.main.institution">Universidad [Placeholder]</p>
+                    <p class="timeline-description" data-i18n="education.main.description">Especialización en Inteligencia Artificial y Machine Learning. Proyectos destacados en procesamiento de datos y desarrollo de modelos predictivos.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal-element" data-reveal="fade-right" data-delay="100">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date" data-i18n="education.course1.date">2023</div>
+                    <h3 class="timeline-title" data-i18n="education.course1.title">Certificación en Deep Learning</h3>
+                    <p class="timeline-institution" data-i18n="education.course1.institution">Coursera / DeepLearning.AI</p>
+                    <p class="timeline-description" data-i18n="education.course1.description">Especialización completa en redes neuronales profundas y aplicaciones prácticas.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal-element" data-reveal="fade-right" data-delay="200">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date" data-i18n="education.course2.date">2022</div>
+                    <h3 class="timeline-title" data-i18n="education.course2.title">Machine Learning Engineer</h3>
+                    <p class="timeline-institution" data-i18n="education.course2.institution">Google Cloud</p>
+                    <p class="timeline-description" data-i18n="education.course2.description">Certificación en desarrollo e implementación de modelos de ML en la nube.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="section-header">
+            <h2 class="section-title" data-i18n="contact.title">Contacto</h2>
+            <div class="section-divider"></div>
+        </div>
+
+        <div class="contact-content">
+            <p class="contact-intro reveal-element" data-reveal="fade-up" data-i18n="contact.intro">¿Tienes un proyecto en mente? Me encantaría escucharte y colaborar contigo.</p>
+            
+            <div class="contact-methods">
+                <a href="mailto:alberto@example.com" class="contact-item reveal-element" data-reveal="fade-up" data-delay="100">
+                    <div class="contact-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </div>
+                    <div class="contact-info">
+                        <h3 data-i18n="contact.email.label">Email</h3>
+                        <p class="contact-value">alberto@example.com</p>
+                    </div>
+                </a>
+
+                <a href="https://linkedin.com/in/alberto-lopez" target="_blank" rel="noopener noreferrer" class="contact-item reveal-element" data-reveal="fade-up" data-delay="200">
+                    <div class="contact-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </div>
+                    <div class="contact-info">
+                        <h3 data-i18n="contact.linkedin.label">LinkedIn</h3>
+                        <p class="contact-value" data-i18n="contact.linkedin.value">Conectar en LinkedIn</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 data-i18n="footer.about">Sobre este sitio</h3>
+                <p data-i18n="footer.description">Portfolio personal desarrollado con tecnologías modernas y diseño Dark Modern SaaS.</p>
+            </div>
+            <div class="footer-section">
+                <h3 data-i18n="footer.quick">Enlaces rápidos</h3>
+                <a href="#about" data-i18n="nav.about">Sobre Mí</a>
+                <a href="#projects" data-i18n="nav.projects">Proyectos</a>
+                <a href="#education" data-i18n="nav.education">Educación</a>
+                <a href="#contact" data-i18n="nav.contact">Contacto</a>
+            </div>
+            <div class="footer-section">
+                <h3 data-i18n="footer.tech">Tecnologías</h3>
+                <p>HTML5, CSS3, JavaScript</p>
+                <p>Dark Modern Design</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> Alberto López. <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose" aria-label="Close modal">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be injected by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
