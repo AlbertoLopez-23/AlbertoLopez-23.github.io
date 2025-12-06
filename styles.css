@@ -317,6 +317,86 @@ section {
   min-height: var(--height-section);
   padding: var(--spacing-4xl) var(--spacing-3xl);
   position: relative;
+  overflow: hidden;
+}
+
+/* Texturas de fondo para cada sección */
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Patrón de puntos para About */
+.about-section::before {
+  background-image: radial-gradient(circle at 2px 2px, rgba(152, 210, 192, 0.15) 1px, transparent 0);
+  background-size: 40px 40px;
+  opacity: 0.05;
+}
+
+/* Patrón de líneas para Experience */
+.experience-section::before {
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(79, 149, 157, 0.1) 2px,
+      rgba(79, 149, 157, 0.1) 4px
+    );
+  opacity: 0.04;
+}
+
+/* Patrón de cuadrícula para Projects */
+.projects-section::before {
+  background-image: 
+    linear-gradient(rgba(32, 87, 129, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(32, 87, 129, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.04;
+}
+
+/* Degradado radial para Education */
+.education-section::before {
+  background: radial-gradient(ellipse at top, rgba(152, 210, 192, 0.08) 0%, transparent 50%);
+  opacity: 0.6;
+}
+
+/* Patrón de ondas para Languages */
+.languages-section::before {
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(79, 149, 157, 0.08) 10px,
+      rgba(79, 149, 157, 0.08) 20px
+    );
+  opacity: 0.05;
+}
+
+/* Degradado para Certifications */
+.certifications-section::before {
+  background: linear-gradient(135deg, rgba(32, 87, 129, 0.06) 0%, rgba(152, 210, 192, 0.04) 100%);
+  opacity: 0.5;
+}
+
+/* Degradado radial para Contact */
+.contact-section::before {
+  background: radial-gradient(ellipse at center, rgba(152, 210, 192, 0.06) 0%, transparent 70%);
+  opacity: 0.4;
+}
+
+/* Asegurar que el contenido esté por encima */
+section > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* Separador sutil entre secciones */
@@ -331,6 +411,7 @@ section::after {
   height: 1px;
   background: var(--gradient-divider);
   opacity: 0.4;
+  z-index: 1;
 }
 
 section:last-child::after {
@@ -547,20 +628,48 @@ a:hover {
 
 /* Hero Section */
 .hero-section {
-  min-height: 100vh;
+  min-height: calc(100vh - var(--height-header));
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  padding: var(--spacing-6xl) var(--spacing-3xl);
+  padding-top: calc(var(--height-header) + var(--spacing-4xl));
+  padding-bottom: var(--spacing-6xl);
+  padding-left: var(--spacing-3xl);
+  padding-right: var(--spacing-3xl);
   position: relative;
   overflow: hidden;
+  background: var(--bg-primary);
+}
+
+/* Canvas de Vanta.js - más visible */
+.hero-section canvas {
+  opacity: 0.55 !important;
+  z-index: 0;
+}
+
+/* Textura sutil para el hero (se superpone al mesh de Vanta) */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(32, 87, 129, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(152, 210, 192, 0.04) 0%, transparent 50%);
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .hero-content {
   text-align: center;
   max-width: 900px;
   margin-bottom: var(--spacing-5xl);
+  position: relative;
+  z-index: 2;
 }
 
 .hero-title {
@@ -909,21 +1018,97 @@ a:hover {
 .bento-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 200px);
-  gap: var(--spacing-lg);
+  grid-template-rows: repeat(3, 220px);
+  gap: var(--spacing-xl);
   max-width: 1400px;
   margin: 0 auto;
 }
 
+@media (min-width: 1200px) {
+  .bento-grid {
+    grid-template-rows: repeat(3, 280px);
+    gap: var(--spacing-2xl);
+  }
+  
+  .bento-box {
+    padding: var(--spacing-4xl);
+  }
+  
+  .bento-large {
+    padding: var(--spacing-5xl);
+  }
+  
+  .bento-wide {
+    padding: var(--spacing-4xl);
+  }
+  
+  .bento-tall {
+    padding: var(--spacing-4xl);
+  }
+  
+  .bento-small {
+    padding: var(--spacing-3xl);
+  }
+  
+  .bento-icon {
+    font-size: 3.5rem;
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .bento-large .bento-icon {
+    font-size: 4rem;
+  }
+  
+  .bento-small .bento-icon {
+    font-size: 2.5rem;
+  }
+  
+  .bento-title {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .bento-large .bento-title {
+    font-size: 1.8rem;
+  }
+  
+  .bento-small .bento-title {
+    font-size: 1.3rem;
+  }
+  
+  .bento-desc {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .bento-large .bento-desc {
+    font-size: 1.1rem;
+  }
+  
+  .bento-small .bento-desc {
+    font-size: 0.95rem;
+  }
+  
+  .bento-tags {
+    gap: var(--spacing-sm);
+  }
+  
+  .bento-tags .tag {
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: 0.9rem;
+  }
+}
+
 .bento-box {
-  background: var(--bg-tertiary);
-  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: var(--spacing-3xl);
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  transition: all var(--transition-base);
+  transition: transform 0.3s ease;
   opacity: 0;
   transform: translateY(30px);
 }
@@ -933,15 +1118,24 @@ a:hover {
   transform: translateY(0);
 }
 
+/* Efecto Spotlight - Glow que sigue al ratón */
 .bento-box::before {
-  content: '';
+  content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: var(--gradient-divider);
-  opacity: 0.3;
+  top: var(--y, 0);
+  left: var(--x, 0);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(62, 146, 204, 0.15) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bento-box:hover::before {
+  opacity: 1;
 }
 
 .bento-overlay {
@@ -966,13 +1160,44 @@ a:hover {
   transform: scale(1.2) rotate(5deg);
 }
 
+/* Bento boxes deshabilitados (en desarrollo) */
+.bento-box[data-disabled="true"] {
+  cursor: default;
+  opacity: 0.7;
+}
+
+.bento-box[data-disabled="true"]:hover {
+  transform: none;
+}
+
+.bento-box[data-disabled="true"]:hover::before {
+  opacity: 0;
+}
+
+.bento-box[data-disabled="true"]:hover .bento-overlay {
+  opacity: 0;
+}
+
+.bento-box[data-disabled="true"]:hover .bento-icon {
+  transform: none;
+}
+
 .bento-large {
   grid-column: span 2;
   grid-row: span 2;
 }
 
+.bento-wide {
+  grid-column: span 2;
+}
+
 .bento-tall {
   grid-row: span 2;
+}
+
+.bento-small {
+  grid-column: span 1;
+  grid-row: span 1;
 }
 
 .bento-content {
@@ -988,7 +1213,15 @@ a:hover {
   font-size: 3rem;
   margin-bottom: var(--spacing-lg);
   transition: transform var(--transition-base);
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+}
+
+.bento-icon i {
+  font-size: 3rem;
+  line-height: 1;
 }
 
 .bento-title {
@@ -1071,11 +1304,38 @@ a:hover {
 }
 
 .timeline-content {
-  background: var(--bg-tertiary);
-  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: var(--spacing-3xl);
-  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.timeline-content > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Efecto Spotlight - Glow que sigue al ratón */
+.timeline-content::before {
+  content: "";
+  position: absolute;
+  top: var(--y, 0);
+  left: var(--x, 0);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(62, 146, 204, 0.15) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.timeline-content:hover::before {
+  opacity: 1;
 }
 
 .timeline-content:hover {

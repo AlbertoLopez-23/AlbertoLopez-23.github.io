@@ -192,8 +192,13 @@ function initModals() {
             <p class="modal-tech">${window.i18n.t(project.technologies, lang)}</p>
         `;
         
+        // Calcular el ancho del scrollbar antes de ocultarlo
+        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+        
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
+        // Compensar el ancho del scrollbar para evitar desplazamiento del header
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
         
         // Animate modal content
         setTimeout(() => {
@@ -205,6 +210,7 @@ function initModals() {
     function closeModal() {
         modal.classList.remove('active');
         document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
         
         // Reset animation
         modalBody.style.opacity = '0';
@@ -214,6 +220,20 @@ function initModals() {
     // Open modal on bento box click
     bentoBoxes.forEach((box, index) => {
         box.addEventListener('click', () => {
+            // Proyectos deshabilitados (en desarrollo) no hacen nada
+            if (box.getAttribute('data-disabled') === 'true') {
+                return;
+            }
+            // Proyecto 0 (Clustering Fútbol) redirige a página personalizada
+            if (index === 0) {
+                window.location.href = 'project-clustering-futbol.html';
+                return;
+            }
+            // Proyecto 1 (Valor de Mercado) redirige a página personalizada
+            if (index === 1) {
+                window.location.href = 'project-valor-mercado-futbol.html';
+                return;
+            }
             openModal(index);
         });
     });
@@ -416,3 +436,15 @@ const optimizedScroll = debounce(() => {
 
 window.addEventListener('scroll', optimizedScroll, { passive: true });
 
+// ============================================
+// Efecto Spotlight (Glow que sigue al ratón)
+// ============================================
+document.querySelectorAll('.bento-box, .timeline-content').forEach(card => {
+    card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--x', `${x}px`);
+        card.style.setProperty('--y', `${y}px`);
+    });
+});
