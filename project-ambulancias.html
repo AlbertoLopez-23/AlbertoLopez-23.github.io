@@ -86,6 +86,20 @@
             .project-hero .cta-buttons a:last-child {
                 grid-column: 1;
             }
+            
+            .project-hero {
+                padding: calc(var(--height-header) + var(--spacing-xl)) var(--spacing-sm) var(--spacing-2xl);
+            }
+            
+            .project-hero h1 {
+                font-size: clamp(1.5rem, 8vw, 2rem);
+                margin-bottom: var(--spacing-md);
+            }
+            
+            .project-hero .subtitle {
+                font-size: clamp(0.95rem, 3vw, 1.1rem);
+                margin-bottom: var(--spacing-xl);
+            }
         }
 
         .project-section {
@@ -94,34 +108,83 @@
             margin: 0 auto;
         }
 
+        @media (max-width: 768px) {
+            .project-section {
+                padding: var(--spacing-3xl) var(--spacing-base);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project-section {
+                padding: var(--spacing-2xl) var(--spacing-sm);
+            }
+        }
+
         .project-section h2 {
-            font-size: 2.5rem;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
             font-weight: 700;
             margin-bottom: var(--spacing-2xl);
             color: var(--color-accent);
         }
 
+        @media (max-width: 480px) {
+            .project-section h2 {
+                font-size: clamp(1.5rem, 6vw, 2rem);
+                margin-bottom: var(--spacing-xl);
+            }
+        }
+
         .project-section h3 {
-            font-size: 1.8rem;
+            font-size: clamp(1.4rem, 4vw, 1.8rem);
             font-weight: 600;
             margin-top: var(--spacing-4xl);
             margin-bottom: var(--spacing-xl);
             color: var(--text-primary);
         }
 
+        @media (max-width: 768px) {
+            .project-section h3 {
+                margin-top: var(--spacing-2xl);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project-section h3 {
+                font-size: clamp(1.2rem, 4vw, 1.5rem);
+                margin-top: var(--spacing-xl);
+                margin-bottom: var(--spacing-lg);
+            }
+        }
+
         .project-section h4 {
-            font-size: 1.4rem;
+            font-size: clamp(1.2rem, 3.5vw, 1.4rem);
             font-weight: 600;
             margin-top: var(--spacing-3xl);
             margin-bottom: var(--spacing-lg);
             color: var(--color-accent);
         }
 
+        @media (max-width: 480px) {
+            .project-section h4 {
+                font-size: clamp(1.1rem, 3.5vw, 1.3rem);
+                margin-top: var(--spacing-xl);
+                margin-bottom: var(--spacing-md);
+            }
+        }
+
         .project-section p {
-            font-size: 1.1rem;
+            font-size: clamp(0.95rem, 2.8vw, 1.1rem);
             line-height: 1.8;
             color: var(--text-secondary);
             margin-bottom: var(--spacing-lg);
+        }
+
+        @media (max-width: 480px) {
+            .project-section p {
+                font-size: clamp(0.9rem, 2.5vw, 1rem);
+                line-height: 1.7;
+                margin-bottom: var(--spacing-md);
+            }
         }
 
         .project-section strong {
@@ -134,6 +197,20 @@
             margin: var(--spacing-3xl) 0;
         }
 
+        @media (max-width: 768px) {
+            .insights-grid {
+                gap: var(--spacing-lg);
+                margin: var(--spacing-2xl) 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .insights-grid {
+                gap: var(--spacing-md);
+                margin: var(--spacing-xl) 0;
+            }
+        }
+
         .insight-card {
             background: var(--bg-tertiary);
             border: 1px solid var(--border-color);
@@ -141,6 +218,18 @@
             padding: var(--spacing-3xl);
             position: relative;
             overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .insight-card {
+                padding: var(--spacing-2xl);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .insight-card {
+                padding: var(--spacing-xl);
+            }
         }
 
         .insight-card::before {
@@ -156,7 +245,14 @@
         .insight-card h4 {
             color: var(--color-accent);
             margin-bottom: var(--spacing-md);
-            font-size: 1.3rem;
+            font-size: clamp(1.1rem, 3.5vw, 1.3rem);
+        }
+
+        @media (max-width: 480px) {
+            .insight-card h4 {
+                font-size: clamp(1rem, 3.5vw, 1.2rem);
+                margin-bottom: var(--spacing-sm);
+            }
         }
 
         .quote {
@@ -166,8 +262,24 @@
             margin: var(--spacing-3xl) 0;
             font-style: italic;
             color: var(--text-secondary);
-            font-size: 1.1rem;
+            font-size: clamp(0.95rem, 2.8vw, 1.1rem);
             line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .quote {
+                padding: var(--spacing-xl);
+                margin: var(--spacing-2xl) 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .quote {
+                padding: var(--spacing-lg);
+                margin: var(--spacing-xl) 0;
+                font-size: clamp(0.9rem, 2.5vw, 1rem);
+                line-height: 1.7;
+            }
         }
 
         .back-button {
@@ -204,15 +316,43 @@
             max-width: 800px;
         }
 
+        @media (max-width: 768px) {
+            .coming-soon {
+                padding: var(--spacing-2xl);
+                margin: var(--spacing-3xl) auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .coming-soon {
+                padding: var(--spacing-xl);
+                margin: var(--spacing-2xl) auto;
+            }
+        }
+
         .coming-soon h2 {
-            font-size: 2.5rem;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
             color: var(--color-accent);
             margin-bottom: var(--spacing-lg);
         }
 
+        @media (max-width: 480px) {
+            .coming-soon h2 {
+                font-size: clamp(1.5rem, 6vw, 2rem);
+                margin-bottom: var(--spacing-md);
+            }
+        }
+
         .coming-soon p {
-            font-size: 1.2rem;
+            font-size: clamp(0.95rem, 3vw, 1.2rem);
             color: var(--text-secondary);
+        }
+
+        @media (max-width: 480px) {
+            .coming-soon p {
+                font-size: clamp(0.9rem, 2.5vw, 1rem);
+                line-height: 1.7;
+            }
         }
 
         .project-hero .cta-buttons a {
@@ -239,6 +379,11 @@
             <div class="nav-logo">
                 <a href="index.html" class="logo-link">AL</a>
             </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html#about" class="nav-link" data-i18n="nav.about">Sobre Mí</a></li>
                 <li><a href="index.html#experience" class="nav-link" data-i18n="nav.experience">Experiencia</a></li>

@@ -87,6 +87,20 @@
             .project-hero .cta-buttons a:last-child {
                 grid-column: 1;
             }
+            
+            .project-hero {
+                padding: calc(var(--height-header) + var(--spacing-xl)) var(--spacing-sm) var(--spacing-2xl);
+            }
+            
+            .project-hero h1 {
+                font-size: clamp(1.5rem, 8vw, 2rem);
+                margin-bottom: var(--spacing-md);
+            }
+            
+            .project-hero .subtitle {
+                font-size: clamp(0.95rem, 3vw, 1.1rem);
+                margin-bottom: var(--spacing-xl);
+            }
         }
 
         .project-section {
@@ -95,34 +109,83 @@
             margin: 0 auto;
         }
 
+        @media (max-width: 768px) {
+            .project-section {
+                padding: var(--spacing-3xl) var(--spacing-base);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project-section {
+                padding: var(--spacing-2xl) var(--spacing-sm);
+            }
+        }
+
         .project-section h2 {
-            font-size: 2.5rem;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
             font-weight: 700;
             margin-bottom: var(--spacing-2xl);
             color: var(--color-accent);
         }
 
+        @media (max-width: 480px) {
+            .project-section h2 {
+                font-size: clamp(1.5rem, 6vw, 2rem);
+                margin-bottom: var(--spacing-xl);
+            }
+        }
+
         .project-section h3 {
-            font-size: 1.8rem;
+            font-size: clamp(1.4rem, 4vw, 1.8rem);
             font-weight: 600;
             margin-top: var(--spacing-4xl);
             margin-bottom: var(--spacing-xl);
             color: var(--text-primary);
         }
 
+        @media (max-width: 768px) {
+            .project-section h3 {
+                margin-top: var(--spacing-2xl);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project-section h3 {
+                font-size: clamp(1.2rem, 4vw, 1.5rem);
+                margin-top: var(--spacing-xl);
+                margin-bottom: var(--spacing-lg);
+            }
+        }
+
         .project-section h4 {
-            font-size: 1.4rem;
+            font-size: clamp(1.2rem, 3.5vw, 1.4rem);
             font-weight: 600;
             margin-top: var(--spacing-3xl);
             margin-bottom: var(--spacing-lg);
             color: var(--color-accent);
         }
 
+        @media (max-width: 480px) {
+            .project-section h4 {
+                font-size: clamp(1.1rem, 3.5vw, 1.3rem);
+                margin-top: var(--spacing-xl);
+                margin-bottom: var(--spacing-md);
+            }
+        }
+
         .project-section p {
-            font-size: 1.1rem;
+            font-size: clamp(0.95rem, 2.8vw, 1.1rem);
             line-height: 1.8;
             color: var(--text-secondary);
             margin-bottom: var(--spacing-lg);
+        }
+
+        @media (max-width: 480px) {
+            .project-section p {
+                font-size: clamp(0.9rem, 2.5vw, 1rem);
+                line-height: 1.7;
+                margin-bottom: var(--spacing-md);
+            }
         }
 
         .project-section strong {
@@ -142,6 +205,7 @@
             .tech-stack {
                 grid-template-columns: repeat(2, 1fr);
                 max-width: 800px;
+                gap: var(--spacing-lg);
             }
         }
 
@@ -149,6 +213,15 @@
             .tech-stack {
                 grid-template-columns: 1fr;
                 max-width: 100%;
+                gap: var(--spacing-md);
+                margin: var(--spacing-2xl) auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .tech-stack {
+                gap: var(--spacing-sm);
+                margin: var(--spacing-xl) auto;
             }
         }
 
@@ -160,6 +233,12 @@
             transition: all var(--transition-base);
         }
 
+        @media (max-width: 480px) {
+            .tech-item {
+                padding: var(--spacing-xl);
+            }
+        }
+
         .tech-item:hover {
             border-color: var(--border-color-strong);
             transform: translateY(-2px);
@@ -169,7 +248,14 @@
         .tech-item h4 {
             color: var(--color-accent);
             margin-bottom: var(--spacing-md);
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 3vw, 1.2rem);
+        }
+
+        @media (max-width: 480px) {
+            .tech-item h4 {
+                font-size: clamp(0.95rem, 3vw, 1.1rem);
+                margin-bottom: var(--spacing-sm);
+            }
         }
 
         .tech-item ul {
@@ -197,6 +283,20 @@
             margin: var(--spacing-3xl) 0;
         }
 
+        @media (max-width: 768px) {
+            .insights-grid {
+                gap: var(--spacing-lg);
+                margin: var(--spacing-2xl) 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .insights-grid {
+                gap: var(--spacing-md);
+                margin: var(--spacing-xl) 0;
+            }
+        }
+
         .insight-card {
             background: var(--bg-tertiary);
             border: 1px solid var(--border-color);
@@ -204,6 +304,18 @@
             padding: var(--spacing-3xl);
             position: relative;
             overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .insight-card {
+                padding: var(--spacing-2xl);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .insight-card {
+                padding: var(--spacing-xl);
+            }
         }
 
         .insight-card::before {
@@ -219,7 +331,14 @@
         .insight-card h4 {
             color: var(--color-accent);
             margin-bottom: var(--spacing-md);
-            font-size: 1.3rem;
+            font-size: clamp(1.1rem, 3.5vw, 1.3rem);
+        }
+
+        @media (max-width: 480px) {
+            .insight-card h4 {
+                font-size: clamp(1rem, 3.5vw, 1.2rem);
+                margin-bottom: var(--spacing-sm);
+            }
         }
 
         .gallery {
@@ -227,6 +346,21 @@
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: var(--spacing-3xl);
             margin: var(--spacing-4xl) 0;
+        }
+
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-2xl);
+                margin: var(--spacing-2xl) 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery {
+                gap: var(--spacing-xl);
+                margin: var(--spacing-xl) 0;
+            }
         }
 
         .gallery-item {
@@ -266,8 +400,15 @@
 
         .gallery-item .caption {
             color: var(--text-secondary);
-            font-size: 0.95rem;
+            font-size: clamp(0.85rem, 2.5vw, 0.95rem);
             line-height: 1.6;
+        }
+
+        @media (max-width: 480px) {
+            .gallery-item .caption {
+                font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+                line-height: 1.5;
+            }
         }
 
         .quote {
@@ -277,8 +418,24 @@
             margin: var(--spacing-3xl) 0;
             font-style: italic;
             color: var(--text-secondary);
-            font-size: 1.1rem;
+            font-size: clamp(0.95rem, 2.8vw, 1.1rem);
             line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .quote {
+                padding: var(--spacing-xl);
+                margin: var(--spacing-2xl) 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .quote {
+                padding: var(--spacing-lg);
+                margin: var(--spacing-xl) 0;
+                font-size: clamp(0.9rem, 2.5vw, 1rem);
+                line-height: 1.7;
+            }
         }
 
         .back-button {
@@ -337,6 +494,11 @@
             <div class="nav-logo">
                 <a href="index.html" class="logo-link">AL</a>
             </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html#about" class="nav-link" data-i18n="nav.about">Sobre Mí</a></li>
                 <li><a href="index.html#experience" class="nav-link" data-i18n="nav.experience">Experiencia</a></li>
