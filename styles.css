@@ -1358,6 +1358,37 @@ a:hover {
   margin-top: auto;
 }
 
+.bento-cta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
+  color: var(--color-accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0.7;
+  transition: all var(--transition-base);
+}
+
+.bento-box:hover .bento-cta {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+.bento-cta i {
+  font-size: 1rem;
+  transition: transform var(--transition-base);
+}
+
+.bento-box:hover .bento-cta i {
+  transform: translateX(4px);
+}
+
+/* Ocultar CTA en proyectos deshabilitados */
+.bento-box[data-disabled="true"] .bento-cta {
+  display: none;
+}
+
 .tag {
   padding: var(--spacing-xs) var(--spacing-base);
   background: var(--bg-secondary);

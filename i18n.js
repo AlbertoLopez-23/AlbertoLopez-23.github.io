@@ -46,6 +46,7 @@ const translations = {
         // Projects
         'projects.title': 'Proyectos',
         'projects.inDevelopment': 'En desarrollo',
+        'projects.viewProject': 'Ver proyecto',
         'projects.0.title': 'Clustering en Fútbol Profesional',
         'projects.0.short': 'Análisis de rendimiento físico mediante Machine Learning no supervisado',
         'projects.0.description': 'Análisis de más de 380,000 registros de La Liga para descubrir patrones físicos invisibles en jugadores mediante técnicas de clustering (K-Means y SOM).',
@@ -284,6 +285,7 @@ const translations = {
         // Projects
         'projects.title': 'Projects',
         'projects.inDevelopment': 'In development',
+        'projects.viewProject': 'View project',
         'projects.0.title': 'Clustering in Professional Football',
         'projects.0.short': 'Physical performance analysis through unsupervised Machine Learning',
         'projects.0.description': 'Analysis of over 380,000 records from La Liga to discover invisible physical patterns in players using clustering techniques (K-Means and SOM).',
