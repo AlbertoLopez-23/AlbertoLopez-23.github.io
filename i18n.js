@@ -35,7 +35,7 @@ const translations = {
         'about.what.title': 'Lo que hago',
         'about.what.text': 'Tengo base de matemático y vocación de analista. Estudié Matemáticas porque me gusta la lógica y el pensamiento abstracto, y me especialicé en Big Data y Visual Analytics porque quería aplicar todo eso a problemas reales. Disfruto encontrando respuestas en los datos y traduciéndolas para que se entiendan fácil.',
         'about.origin.title': 'De dónde vengo',
-        'about.origin.text': 'Soy una mezcla de culturas: nací en Madrid, crecí en Galicia y ahora vivo en Badajoz. Además, he tenido la suerte de vivir fuera dos veces: pasé un año en EE. UU. y otro en Polonia. Estas experiencias no solo me dieron un inglés fluido, sino que me enseñaron a espabilarme y adaptarme rápido a cualquier sitio o equipo de trabajo.',
+        'about.origin.text': 'Soy una mezcla de culturas: nací en Madrid, crecí en Galicia y ahora vivo en Badajoz. Además, he tenido la suerte de vivir fuera dos veces: pasé un año en EE. UU. y otro en Polonia. Estas experiencias no solo me dieron un inglés fluido, sino que me enseñaron adaptarme rápido a cualquier sitio o equipo de trabajo.',
         'about.personality.title': 'Cómo soy',
         'about.personality.text': 'Me considero una persona positiva y tranquila. Para desconectar del trabajo, necesito cambiar el chip: me ayuda mucho ir al gimnasio, dar paseos largos o simplemente pasar un buen rato con mis amigos. El surf también me gusta, pero al final, lo que realmente me carga las pilas para rendir bien es mantener ese equilibrio entre estar activo y disfrutar de mi gente.',
         'about.skills.title': 'Habilidades',
@@ -482,31 +482,21 @@ const translations = {
     }
 };
 
-// Detectar idioma basado en zona horaria
+// Detectar idioma basado en el idioma del navegador
 function detectLanguage() {
     try {
-        const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-        const offset = new Date().getTimezoneOffset();
+        // Obtener el idioma del navegador
+        const browserLang = navigator.language || navigator.userLanguage;
         
-        // Zonas horarias de España (UTC+1 en invierno, UTC+2 en verano)
-        // También detectar por nombre de timezone
-        if (timezone.includes('Madrid') || timezone.includes('Europe/Madrid') || 
-            timezone.includes('Barcelona') || timezone.includes('Canary')) {
+        // Si el idioma del navegador comienza con 'es' (español), usar español
+        if (browserLang && browserLang.toLowerCase().startsWith('es')) {
             return 'es';
         }
         
-        // Detectar por offset (UTC+1 o UTC+2)
-        // getTimezoneOffset devuelve minutos, negativo para zonas adelantadas
-        // España está en UTC+1 (offset -60) o UTC+2 (offset -120)
-        if (offset <= -60 && offset >= -120) {
-            // Verificar si está en la zona horaria europea central/occidental
-            // Esto incluirá España y otros países, pero es una aproximación
-            return 'es';
-        }
-        
+        // Por defecto, usar inglés
         return 'en';
     } catch (error) {
-        console.warn('Error detecting timezone, defaulting to English:', error);
+        console.warn('Error detecting browser language, defaulting to English:', error);
         return 'en';
     }
 }
