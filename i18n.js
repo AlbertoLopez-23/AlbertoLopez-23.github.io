@@ -12,7 +12,7 @@ const translations = {
         
         // Hero
         'hero.greeting': 'Hola, soy',
-        'hero.subtitle': 'Analista de Datos',
+        'hero.subtitle': 'Ingeniero de Datos',
         'hero.cta': 'Conoce más',
         
         // Preview Cards
@@ -32,8 +32,8 @@ const translations = {
         // About
         'about.title': 'Sobre Mí',
         'about.intro.text': 'Hola, soy Alberto. Matemático y apasionado de los datos.',
-        'about.what.title': 'Lo que hago',
-        'about.what.text': 'Tengo base de matemático y vocación de analista. Estudié Matemáticas porque me gusta la lógica y el pensamiento abstracto, y me especialicé en Big Data y Visual Analytics porque quería aplicar todo eso a problemas reales. Disfruto encontrando respuestas en los datos y traduciéndolas para que se entiendan fácil.',
+        'about.what.title': 'Quién soy',
+        'about.what.text': 'Tengo base de matemático y vocación técnica y analítica. Combino el rigor analítico con una visión práctica enfocada a resolver problemas reales de negocio. A lo largo de mi trayectoria me he especializado en Big Data e Ingeniería de Datos, trabajando tanto en el desarrollo de pipelines y optimización de datos como en la integración de sistemas y la interlocución directa con clientes. Me mueve la curiosidad técnica y el aprendizaje constante para aplicar siempre las herramientas más eficientes en el procesamiento de datos.',
         'about.origin.title': 'De dónde vengo',
         'about.origin.text': 'Soy una mezcla de culturas: nací en Madrid, crecí en Galicia y ahora vivo en Badajoz. Además, he tenido la suerte de vivir fuera dos veces: pasé un año en EE. UU. y otro en Polonia. Estas experiencias no solo me dieron un inglés fluido, sino que me enseñaron adaptarme rápido a cualquier sitio o equipo de trabajo.',
         'about.personality.title': 'Cómo soy',
@@ -66,29 +66,41 @@ const translations = {
         
         // Education
         'education.title': 'Educación',
-        'education.master.date': '2024 - 2025',
+        'education.master.date': '2025',
         'education.master.title': 'Máster en Big Data & Visual Analytics',
         'education.master.institution': 'Universidad Internacional de La Rioja (UNIR)',
-        'education.degree.date': '2018 - 2024',
+        'education.degree.date': '2024',
         'education.degree.title': 'Grado en Matemáticas',
         'education.degree.institution': 'Universidad de Extremadura',
-        'education.exchange.date': '2022 - 2023',
+        'education.exchange.date': '2023',
         'education.exchange.title': 'Grado en Matemáticas',
         'education.exchange.institution': 'Uniwersytet Zielonogórski',
-        'education.highschool.date': '2016 - 2017',
+        'education.highschool.date': '2015',
         'education.highschool.title': 'Año Académico en EE.UU',
         'education.highschool.institution': 'St. John Paul II Catholic High School, Huntsville, Alabama, EE.UU',
         
         // Experience
         'experience.title': 'Experiencia Profesional',
-        'experience.setenova.date': 'Febrero 2025 - Actualidad',
-        'experience.setenova.title': 'Analista e Ingeniero de Datos Junior',
+        'experience.mecalux.date': 'Marzo 2026 - Actualidad',
+        'experience.mecalux.title': 'Ingeniero de Proyectos',
+        'experience.mecalux.company': 'Mecalux',
+        'experience.mecalux.desc1': 'Optimización de datos y consultas: Diseño, desarrollo y optimización de consultas complejas en bases de datos utilizando C# y LINQ, mejorando la eficiencia operativa de los procesos de almacenamiento y reduciendo tiempos de respuesta.',
+        'experience.mecalux.desc2': 'Integración de sistemas y flujo de datos: Implementación de flujos de comunicación e integración entre el software principal, el ERP y plataformas externas mediante mensajería y APIs para la automatización del procesamiento de productos, inventario y logística.',
+        'experience.mecalux.desc3': 'Consultoría técnica y solución de necesidades: Análisis e interpretación de requisitos de negocio de clientes internacionales, traduciendo procesos complejos en adaptaciones técnicas personalizadas sobre el software de la compañía.',
+        'experience.mecalux.desc4': 'Gestión de integraciones con terceros: Desarrollo de conexiones con servicios de transporte y agencias externas a través de APIs REST para la sincronización de estados, generación de etiquetas y seguimiento en tiempo real.',
         'experience.setenova.company': 'Setenova',
-        'experience.setenova.desc1': 'Participación activa en proyectos variados, colaborando en equipos multidisciplinarios y asumiendo responsabilidades en todas las fases del ciclo de vida del dato, desde la recolección hasta el desarrollo de soluciones.',
-        'experience.setenova.desc5': 'Dirección de proyectos y coordinación de equipos, liderando iniciativas y asegurando la entrega exitosa de objetivos.',
-        'experience.setenova.desc2': 'Diseño y desarrollo de flujos de trabajo automatizados con Airflow, optimizando procesos y asegurando la eficiencia operativa.',
-        'experience.setenova.desc3': 'Programación y automatización de tareas con Python, asegurando la máxima calidad en la recolección, limpieza y procesamiento de la información, así como la gestión y consulta de bases de datos con PostgreSQL para garantizar la integridad y disponibilidad de los datos.',
-        'experience.setenova.desc4': 'Integración de herramientas de inteligencia artificial para el análisis avanzado de datos, impulsando la innovación y la toma de decisiones basadas en información precisa.',
+        'experience.setenova.de.date': 'Julio 2025 - Febrero 2026',
+        'experience.setenova.de.title': 'Ingeniero de Datos',
+        'experience.setenova.de.desc1': 'Responsable del ciclo de vida completo de los datos, desde el diseño y desarrollo de pipelines de datos escalables (ETL/ELT) hasta su mantenimiento y optimización para garantizar la integridad y disponibilidad de la información.',
+        'experience.setenova.de.desc2': 'Desarrollo y puesta en producción de modelos de machine learning y soluciones de analítica avanzada para resolver problemas de negocio estratégicos y descubrir oportunidades latentes en los datos.',
+        'experience.setenova.de.desc3': 'Actúo como puente entre los equipos técnicos y de negocio, traduciendo sus necesidades en especificaciones funcionales y comunicando insights complejos de forma clara para facilitar la toma de decisiones.',
+        'experience.setenova.de.desc4': 'Dirección de proyectos y coordinación de equipos, liderando iniciativas y asegurando la entrega exitosa de objetivos.',
+        'experience.setenova.de.desc5': 'Contribuyo activamente a la evolución de la arquitectura de datos de la compañía, investigando e implementando nuevas herramientas y metodologías para impulsar la innovación y la eficiencia.',
+        'experience.setenova.da.date': 'Febrero 2025 - Julio 2025',
+        'experience.setenova.da.title': 'Analista de Datos & Especialista en Integración de Información',
+        'experience.setenova.da.desc1': 'Encargado de la recopilación, limpieza y unificación de datos provenientes de múltiples fuentes para apoyar procesos de análisis y toma de decisiones en Setenova.',
+        'experience.setenova.da.desc2': 'He trabajado con técnicas de web scraping, automatización de flujos con Airflow y herramientas como Lattice, además de realizar investigaciones documentales y técnicas para identificar nuevas fuentes de información relevantes.',
+        'experience.setenova.da.desc3': 'Mi rol ha exigido aprender rápidamente y adaptarme constantemente a nuevas herramientas, desafíos técnicos y entornos cambiantes. Combino habilidades de análisis, ingeniería de datos y curiosidad tecnológica para mejorar la calidad y el acceso a la información dentro del equipo.',
         
         // Languages
         'languages.title': 'Idiomas',
@@ -101,9 +113,20 @@ const translations = {
         
         // Certifications
         'certifications.title': 'Certificaciones',
+        'certifications.dp700.title': 'DP-700 Microsoft Certified: Fabric Data Engineer Associate',
+        'certifications.dp600.title': 'DP-600 Fabric Analytics Engineer Associate',
+        'certifications.azure.title': 'AZ-900 Microsoft Certified: Azure Fundamentals',
         'certifications.aws.title': 'AWS Certified Cloud Practitioner',
+        'certifications.databricks.fundamentals.title': 'Databricks Fundamentals',
+        'certifications.databricks.genai.title': 'Generative AI Fundamentals',
+        'certifications.databricks.gcp.title': 'GCP Databricks Platform Architect',
+        'certifications.databricks.agent.title': 'AI Agent Fundamentals',
+        'certifications.spark.l1.title': 'Spark - Level 1',
+        'certifications.spark.l2.title': 'Spark - Level 2',
+        'certifications.claude.code.title': 'Claude Code in Action',
+        'certifications.claude.101.title': 'Claude 101',
+        'certifications.csharp.title': 'Foundational C# with Microsoft',
         'certifications.english.title': 'Certificate in Advanced English (C1)',
-        'certifications.azure.title': 'Azure Fundamentals AZ-900',
         
         // Contact
         'contact.title': 'Contacto',
@@ -251,7 +274,7 @@ const translations = {
         
         // Hero
         'hero.greeting': 'Hello, I\'m',
-        'hero.subtitle': 'Data Analyst',
+        'hero.subtitle': 'Data Engineer',
         'hero.cta': 'Learn more',
         
         // Preview Cards
@@ -271,8 +294,8 @@ const translations = {
         // About
         'about.title': 'About Me',
         'about.intro.text': 'Hello, I\'m Alberto. Mathematician and data enthusiast.',
-        'about.what.title': 'What I do',
-        'about.what.text': 'I have a mathematician\'s foundation and an analyst\'s vocation. I studied Mathematics because I like logic and abstract thinking, and I specialized in Big Data and Visual Analytics because I wanted to apply all of that to real problems. I enjoy finding answers in data and translating them so they\'re easy to understand.',
+        'about.what.title': 'Who am I',
+        'about.what.text': 'I have a background in mathematics paired with a technical and analytical mindset. I combine analytical rigor with a practical approach focused on solving real business problems. Throughout my career, I\'ve specialized in Big Data and Data Engineering, working on everything from developing data pipelines and optimizing data processing to system integration and direct client communication. Driven by technical curiosity, I am committed to continuous learning to leverage the most efficient tools for data processing.',
         'about.origin.title': 'Where I come from',
         'about.origin.text': 'I\'m a mix of cultures: I was born in Madrid, grew up in Galicia and now live in Badajoz. Plus, I\'ve been lucky enough to live abroad twice: I spent a year in the USA and another in Poland. These experiences not only gave me fluent English, but also taught me to be resourceful and adapt quickly to any place or work team.',
         'about.personality.title': 'How I am',
@@ -305,29 +328,41 @@ const translations = {
         
         // Education
         'education.title': 'Education',
-        'education.master.date': '2024 - 2025',
+        'education.master.date': '2025',
         'education.master.title': 'Master in Big Data & Visual Analytics',
         'education.master.institution': 'Universidad Internacional de La Rioja (UNIR)',
-        'education.degree.date': '2018 - 2024',
+        'education.degree.date': '2024',
         'education.degree.title': 'Bachelor\'s in Mathematics',
         'education.degree.institution': 'Universidad de Extremadura',
-        'education.exchange.date': '2022 - 2023',
+        'education.exchange.date': '2023',
         'education.exchange.title': 'Bachelor\'s in Mathematics',
         'education.exchange.institution': 'Uniwersytet Zielonogórski',
-        'education.highschool.date': '2016 - 2017',
+        'education.highschool.date': '2015',
         'education.highschool.title': 'Academic Year in USA',
         'education.highschool.institution': 'St. John Paul II Catholic High School, Huntsville, Alabama, USA',
         
         // Experience
         'experience.title': 'Professional Experience',
-        'experience.setenova.date': 'February 2025 - Present',
-        'experience.setenova.title': 'Junior Data Analyst and Engineer',
+        'experience.mecalux.date': 'March 2026 - Present',
+        'experience.mecalux.title': 'Project Engineer',
+        'experience.mecalux.company': 'Mecalux',
+        'experience.mecalux.desc1': 'Data & Query Optimization: Designed, developed, and optimized complex database queries using C# and LINQ, improving the operational efficiency of warehouse management systems and reducing query execution times.',
+        'experience.mecalux.desc2': 'System Integration & Data Pipelines: Implemented data flows and seamless integrations between core software, ERP systems, and third-party platforms via messaging queues and APIs to automate product, inventory, and order processing.',
+        'experience.mecalux.desc3': 'Technical Solution Architecture: Analyzed and interpreted business requirements from international clients, translating complex workflows into custom software adaptations.',
+        'experience.mecalux.desc4': 'Third-Party API Integration: Engineered API integrations with logistics and carrier providers to enable real-time tracking, automated label generation, and bi-directional data synchronization.',
         'experience.setenova.company': 'Setenova',
-        'experience.setenova.desc1': 'Active participation in various projects, collaborating in multidisciplinary teams and assuming responsibilities in all phases of the data lifecycle, from collection to solution development.',
-        'experience.setenova.desc5': 'Project management and team coordination, leading initiatives and ensuring successful delivery of objectives.',
-        'experience.setenova.desc2': 'Design and development of automated workflows with Airflow, optimizing processes and ensuring operational efficiency.',
-        'experience.setenova.desc3': 'Programming and task automation with Python, ensuring maximum quality in data collection, cleaning and processing, as well as database management and querying with PostgreSQL to guarantee data integrity and availability.',
-        'experience.setenova.desc4': 'Integration of artificial intelligence tools for advanced data analysis, driving innovation and data-driven decision making.',
+        'experience.setenova.de.date': 'July 2025 - February 2026',
+        'experience.setenova.de.title': 'Data Engineer',
+        'experience.setenova.de.desc1': 'Responsible for the full data lifecycle, from designing and developing scalable data pipelines (ETL/ELT) to their maintenance and optimization to ensure information integrity and availability.',
+        'experience.setenova.de.desc2': 'Developing and deploying machine learning models and advanced analytics solutions to solve strategic business problems and uncover latent opportunities in the data.',
+        'experience.setenova.de.desc3': 'Acting as a bridge between technical and business teams, translating their needs into functional specifications and clearly communicating complex insights to facilitate decision-making.',
+        'experience.setenova.de.desc4': 'Project management and team coordination, leading initiatives and ensuring successful delivery of objectives.',
+        'experience.setenova.de.desc5': 'Actively contributing to the evolution of the company\'s data architecture by researching and implementing new tools and methodologies to drive innovation and efficiency.',
+        'experience.setenova.da.date': 'February 2025 - July 2025',
+        'experience.setenova.da.title': 'Data Analyst & Information Integration Specialist',
+        'experience.setenova.da.desc1': 'Responsible for collecting, cleaning, and consolidating data from multiple sources to support analysis and decision-making processes at Setenova.',
+        'experience.setenova.da.desc2': 'I\'ve worked with web scraping techniques, workflow automation using Airflow, and tools like Lattice, as well as conducting both technical and documentary research to identify new, relevant data sources.',
+        'experience.setenova.da.desc3': 'This role has required me to learn quickly and constantly adapt to new tools, technical challenges, and evolving environments. I combine analytical skills, data engineering practices, and a strong sense of technological curiosity to improve the quality and accessibility of information across the team.',
         
         // Languages
         'languages.title': 'Languages',
@@ -340,9 +375,20 @@ const translations = {
         
         // Certifications
         'certifications.title': 'Certifications',
+        'certifications.dp700.title': 'DP-700 Microsoft Certified: Fabric Data Engineer Associate',
+        'certifications.dp600.title': 'DP-600 Fabric Analytics Engineer Associate',
+        'certifications.azure.title': 'AZ-900 Microsoft Certified: Azure Fundamentals',
         'certifications.aws.title': 'AWS Certified Cloud Practitioner',
+        'certifications.databricks.fundamentals.title': 'Databricks Fundamentals',
+        'certifications.databricks.genai.title': 'Generative AI Fundamentals',
+        'certifications.databricks.gcp.title': 'GCP Databricks Platform Architect',
+        'certifications.databricks.agent.title': 'AI Agent Fundamentals',
+        'certifications.spark.l1.title': 'Spark - Level 1',
+        'certifications.spark.l2.title': 'Spark - Level 2',
+        'certifications.claude.code.title': 'Claude Code in Action',
+        'certifications.claude.101.title': 'Claude 101',
+        'certifications.csharp.title': 'Foundational C# with Microsoft',
         'certifications.english.title': 'Certificate in Advanced English (C1)',
-        'certifications.azure.title': 'Azure Fundamentals AZ-900',
         
         // Contact
         'contact.title': 'Contact',
